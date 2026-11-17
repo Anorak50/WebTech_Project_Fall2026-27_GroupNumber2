@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/driverlogin.css">
+        <script src="../JS/driver.js" defer></script>
+        <title> Wayfare - Driver Login </title>
+    </head>
+    <body>
+
+        <div class="topbar">
+            <a class="logo" href="../index.html"> Wayfare </a>
+            <div class="menu">
+                <a href="../index.html"> Home </a>
+                <a href="driverregister.html"  >Register</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <form id="driverLoginForm" class="panel">
+                <h3> Driver Login </h3>
+
+                <h4>Email</h4>
+                <input type="email" id="DrvLoginEmail" placeholder="Enter Your Email">
+                <p id="DrvLoginEmailError" class="error"></p>
+
+                <h4>Password</h4>
+                <input type="password" id="DrvLoginPassword" placeholder="Enter Your Password">
+                <p id="DrvLoginPasswordError" class="error"></p>
+
+                <input type="submit" class="btn" value="Login">
+                <input type="reset" class="btn-grey" value="Reset">
+
+
+                <p class="muted">  <a href="driver.html"> open the Driver portal </a> </p>
+            </form>
+
+            
+        </div>
+
+        <div class="footer"> Wayfare Car Rental Services</div>
+
+    </body>
+</html>

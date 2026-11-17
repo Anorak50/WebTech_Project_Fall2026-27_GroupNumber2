@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/driver.css">
+        <script src="../JS/driver.js" defer></script>
+        <title> Driver - My Trips </title>
+    </head>
+    <body>
+
+        <div class="topbar">
+            <a class="logo" href="../index.html">  Wayfare </a>
+            <div class="menu">
+                <a href="../index.html"> Home </a>
+                <a href="driver.html"> My Trips </a>
+                <a href="leaves.html"> Leave and profile </a>
+                
+                <span class="muted"> Rafi Driver (driver) </span>
+            </div>
+            <a class="btn-grey" href="driverlogin.html"> Logout </a>
+        </div>
+
+        <div class="container">
+                <p id="msg" class="message"></p>
+
+                <div class="panel">
+                    <h3> Trip summary </h3>
+                    <div class="stats">
+                        <div> <b> 4 </b> Assigned trips </div>
+                        <div> <b> 3 </b> Upcoming / active </div>
+                        <div> <b> 1 </b> Completed </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3> My trips </h3>
+
+                    <form id="filterForm" class="toolbar">
+                        <select id="statusFilter">
+                            <option value=""> All trips </option>
+                            <option> Approved </option>
+                            <option> Started </option>
+                            <option> Completed </option>
+                        </select>
+                    </form>
+
+                    <div class="tablebox">
+                        <table id="tripTable">
+                            <tr>
+                                <th> Car </th>
+                                <th> Customer </th>
+                                <th> Dates </th>
+                                <th> Total </th>
+                                <th> Status </th>
+                            </tr>
+                            <tr>
+                                <td> Honda Vezel </td>
+                                <td> Nila Customer </td>
+                                <td> 2026-11-02 to 2026-11-04 </td>
+                                <td> $170 </td>
+                                <td> <span class="reqApproved"> Approved </span> </td>
+                            </tr>
+                            <tr>
+                                <td> Toyota Noah </td>
+                                <td> Karim Hasan </td>
+                                <td> 2026-11-06 to 2026-11-07 </td>
+                                <td> $95 </td>
+                                <td> <span class="reqApproved"> Approved </span> </td>
+                            </tr>
+                            <tr>
+                                <td> Toyota Axio </td>
+                                <td> Nila Customer </td>
+                                <td> 2026-10-20 to 2026-10-22 </td>
+                                <td> $120 </td>
+                                <td> <span class="reqCompleted"> Completed </span> </td>
+                            </tr>
+                            <tr>
+                                <td> Toyota Allion </td>
+                                <td> Karim Hasan </td>
+                                <td> 2026-10-29 to 2026-10-30 </td>
+                                <td> $65 </td>
+                                <td> <span class="reqStarted"> Started </span> </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn" id="startBtn" disabled> Start </button>
+                        <button class="btn" id="completeBtn" disabled> Complete </button>
+                        <button class="btn-red" id="declineBtn" disabled> Decline </button>
+                    </div>
+                </div>
+            
+        </div>
+
+    </body>
+</html>

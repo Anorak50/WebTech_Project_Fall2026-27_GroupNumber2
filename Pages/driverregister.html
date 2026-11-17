@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/driverregister.css">
+        <script src="../JS/driver.js" defer></script>
+        <title> Driver - Register Driver </title>
+    </head>
+    <body>
+
+        <div class="topbar">
+            <a class="logo" href="../index.html">  Wayfare </a>
+            <div class="menu">
+                <a href="../index.html"> Home </a>
+                <a href="driverlogin.html">Login</a>
+            </div>
+        </div>
+
+        <div class="container">
+                <p id="msg" class="message"></p>
+
+                <form id="driverRegisterForm" class="panel">
+                    <h3> Register a new driver </h3>
+
+                    <h4>Name</h4>
+                        <input type="text" id="DrvName" placeholder="Enter Your Name">
+                    <p id="DrvNameError" class="error"></p>
+
+                    <h4>Email</h4>
+                        <input type="email" id="DrvEmail" placeholder="Enter Your Email">
+                    <p id="DrvEmailError" class="error"></p>
+
+                    <h4>Phone</h4>
+                        <input type="text" id="DrvPhone" placeholder="01XXXXXXXXX">
+                    <p id="DrvPhoneError" class="error"></p>
+
+                    <h4>Age</h4>
+                        <input type="number" id="DrvAge" placeholder="Enter Your Age">
+                    <p id="DrvAgeError" class="error"></p>
+
+                    <h4>Gender</h4>
+                    <div class="radiogroup">
+                        <label><input type="radio" name="drvGender" value="Male"> Male</label>
+                        <label><input type="radio" name="drvGender" value="Female"> Female</label>
+                    </div>
+                    <p id="DrvGenderError" class="error"></p>
+
+                    <h4>License Type</h4>
+                        <select id="DrvLicenseType">
+                            <option value=""> Select license type </option>
+                            <option value="Light"> Light </option>
+                            <option value="Medium"> Medium </option>
+                            <option value="Heavy"> Heavy </option>
+                        </select>
+                    <p id="DrvLicenseTypeError" class="error"></p>
+
+                    <h4>License Number</h4>
+                    <input type="text" id="DrvLicenseNo" placeholder="Capital letters and numbers, 8 to 15 characters">
+                    <p id="DrvLicenseNoError" class="error"></p>
+
+                    <h4>Experience</h4>
+                        <input type="number" id="DrvExperience" placeholder="0 to 40">
+                    <p id="DrvExperienceError" class="error"></p>
+
+                    <h4>Preferred City</h4>
+                        <select id="DrvCity">
+                            <option value=""> Select a city </option>
+                            <option value="Dhaka"> Dhaka </option>
+                            <option value="Chattogram"> Chattogram </option>
+                            <option value="Sylhet"> Sylhet </option>
+                        </select>
+                    <p id="DrvCityError" class="error"></p>
+
+                    <h4>Password</h4>
+                        <input type="password" id="DrvPassword" placeholder="Enter your password">
+                    <p id="DrvPasswordError" class="error"></p>
+
+                    <h4>Name</h4>
+                        <input type="password" id="DrvConfirm" placeholder="Confirm your password">
+                    <p id="DrvConfirmError" class="error"></p>
+
+                    <input type="checkbox" id="DrvTerms"> I agree to the driver rules and the rental terms
+                    <p id="DrvTermsError" class="error"></p>
+
+                    <input type="submit" class="btn" value="Register driver">
+                    <input type="reset" class="btn-grey" value="Reset">
+                </form>
+            
+        </div>
+
+    </body>
+</html>
