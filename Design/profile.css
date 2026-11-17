@@ -1,11 +1,8 @@
-/* profile.css - styles for profile.html. The sections follow the page from top to bottom. */
-
-/* ===== whole page ===== */
-* {   /* width and height include padding and border */
+* { 
     box-sizing: border-box;
 }
 
-body {   /* whole page: grey-blue background, dark Arial text */
+body {  
     margin: 0;
     min-height: 100vh;
     background-color: #f4f6fa;
@@ -14,13 +11,11 @@ body {   /* whole page: grey-blue background, dark Arial text */
     font-size: 15px;
 }
 
-.muted {   /* grey small text */
-    margin: 0;
+.muted {  
     color: #667085;
     font-size: 13px;
 }
 
-/* ===== top bar ===== */
 .topbar {
     display: flex;
     flex-wrap: wrap;
@@ -31,7 +26,7 @@ body {   /* whole page: grey-blue background, dark Arial text */
     border-bottom: 1px solid #dfe3ea;
 }
 
-.logo {   /* logo picture + word; margin-right auto pushes the menu to the right */
+.logo {   
     display: flex;
     align-items: center;
     gap: 8px;
@@ -46,7 +41,7 @@ body {   /* whole page: grey-blue background, dark Arial text */
     height: 28px;
 }
 
-.menu {   /* menu links side by side */
+.menu {  
     display: flex;
     align-items: center;
     gap: 18px;
@@ -61,8 +56,8 @@ body {   /* whole page: grey-blue background, dark Arial text */
     color: #1f6feb;
 }
 
-/* ===== message line ===== */
-.message {   /* sticky result message at the top of the page */
+
+.message {  
     min-height: 0;
     text-align: center;
     position: sticky;
@@ -70,7 +65,7 @@ body {   /* whole page: grey-blue background, dark Arial text */
     z-index: 5;
 }
 
-.message span {   /* the message sits in a small white box */
+.message span {  
     display: inline-block;
     margin-top: 8px;
     padding: 8px 16px;
@@ -87,8 +82,8 @@ body {   /* whole page: grey-blue background, dark Arial text */
     color: #c62828;
 }
 
-/* ===== buttons (every button has ONE class) ===== */
-.btn, .btn-grey, .btn-red {   /* shape of every button */
+
+.btn, .btn-grey, .btn-red {   
     display: inline-block;
     padding: 7px 14px;
     font-family: inherit;
@@ -99,23 +94,23 @@ body {   /* whole page: grey-blue background, dark Arial text */
     cursor: pointer;
 }
 
-.btn {   /* blue: the main action (Add, Save, Approve) */
+.btn {  
     background-color: #1f6feb;
     border-color: #1f6feb;
     color: white;
 }
 
-.btn-grey {   /* white: other actions (Reset, Clear, Edit, Logout) */
+.btn-grey {   
     background-color: white;
     color: #1a2233;
 }
 
-.btn-red {   /* white with red text: Delete, Reject */
+.btn-red {   
     background-color: white;
     color: #c62828;
 }
 
-td .btn, td .btn-grey, td .btn-red {   /* buttons inside a table row are smaller */
+td .btn, td .btn-grey, td .btn-red {  
     padding: 6px 10px;
     font-size: 13px;
     margin: 2px;
@@ -125,7 +120,7 @@ td .btn-grey:hover, td .btn-red:hover {
     background-color: #eef4ff;
 }
 
-/* ===== sidebar + content ===== */
+
 .portal {
     display: flex;
     align-items: flex-start;
@@ -135,7 +130,7 @@ td .btn-grey:hover, td .btn-red:hover {
     padding: 22px;
 }
 
-.side {   /* white menu box */
+.side {  
     flex: 0 0 210px;
     padding: 16px;
     background-color: white;
@@ -163,7 +158,7 @@ td .btn-grey:hover, td .btn-red:hover {
     color: #1f6feb;
 }
 
-.side a.active {   /* the page that is open now */
+.side a.active {  
     background-color: #1f6feb;
     color: white;
 }
@@ -173,7 +168,7 @@ td .btn-grey:hover, td .btn-red:hover {
     min-width: 0;
 }
 
-/* ===== page heading ===== */
+
 .pagehead {
     margin-bottom: 18px;
 }
@@ -189,15 +184,15 @@ td .btn-grey:hover, td .btn-red:hover {
     color: #667085;
 }
 
-.pagehead .eyebrow {   /* small blue line above the heading */
+.pagehead .eyebrow {  
     color: #1f6feb;
     font-size: 11px;
     font-weight: bold;
     letter-spacing: 1.2px;
 }
 
-/* ===== white panels ===== */
-.panel {   /* white box with a thin border */
+
+.panel { 
     margin-bottom: 16px;
     padding: 18px;
     background-color: white;
@@ -215,7 +210,7 @@ td .btn-grey:hover, td .btn-red:hover {
     margin: 0 0 10px;
 }
 
-.panelhead {   /* panel title on the left, search or filter on the right */
+.panelhead {   
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -228,14 +223,14 @@ td .btn-grey:hover, td .btn-red:hover {
     margin-bottom: 4px;
 }
 
-/* ===== forms ===== */
+
 fieldset {
     padding: 16px;
     border: 1px solid #dfe3ea;
     border-radius: 8px;
 }
 
-legend {   /* light blue label on the fieldset border */
+legend {  
     padding: 5px 10px;
     background-color: #eef4ff;
     border-radius: 5px;
@@ -243,7 +238,7 @@ legend {   /* light blue label on the fieldset border */
     font-weight: bold;
 }
 
-.formtable {   /* label in the first column, box in the second */
+.formtable {   
     width: 100%;
     border-collapse: collapse;
 }
@@ -262,7 +257,7 @@ legend {   /* light blue label on the fieldset border */
 
 .formtable input,
 .formtable select,
-.formtable textarea {   /* text boxes, dropdowns and text areas */
+.formtable textarea {  
     width: 100%;
     padding: 9px 10px;
     border: 1px solid #cbd2dc;
@@ -283,14 +278,14 @@ legend {   /* light blue label on the fieldset border */
     resize: vertical;
 }
 
-.error {   /* red text under a wrong field */
+.error {  
     margin: 4px 0 0;
     color: #c62828;
     font-size: 13px;
     font-weight: bold;
 }
 
-.actions {   /* the submit and reset row of a form */
+.actions {  
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -307,7 +302,7 @@ legend {   /* light blue label on the fieldset border */
     background-color: #1558c0;
 }
 
-.actions .btn-grey {   /* light grey: Reset */
+.actions .btn-grey {  
     background-color: #e9edf3;
     border-color: #e9edf3;
 }
@@ -316,7 +311,6 @@ legend {   /* light blue label on the fieldset border */
     background-color: #d8dee8;
 }
 
-/* ===== small screens ===== */
 @media screen and (max-width: 800px) {
     .portal {
         flex-direction: column;

@@ -1,11 +1,7 @@
-/* approvals.css - styles for approvals.html. The sections follow the page from top to bottom. */
-
-/* ===== whole page ===== */
-* {   /* width and height include padding and border */
-    box-sizing: border-box;
+* {box-sizing: border-box;
 }
 
-body {   /* whole page: grey-blue background, dark Arial text */
+body {   
     margin: 0;
     min-height: 100vh;
     background-color: #f4f6fa;
@@ -14,13 +10,13 @@ body {   /* whole page: grey-blue background, dark Arial text */
     font-size: 15px;
 }
 
-.muted {   /* grey small text */
+.muted { 
     margin: 0;
     color: #667085;
     font-size: 13px;
 }
 
-/* ===== top bar ===== */
+
 .topbar {
     display: flex;
     flex-wrap: wrap;
@@ -31,7 +27,7 @@ body {   /* whole page: grey-blue background, dark Arial text */
     border-bottom: 1px solid #dfe3ea;
 }
 
-.logo {   /* logo picture + word; margin-right auto pushes the menu to the right */
+.logo {   
     display: flex;
     align-items: center;
     gap: 8px;
@@ -46,7 +42,7 @@ body {   /* whole page: grey-blue background, dark Arial text */
     height: 28px;
 }
 
-.menu {   /* menu links side by side */
+.menu { 
     display: flex;
     align-items: center;
     gap: 18px;
@@ -61,8 +57,8 @@ body {   /* whole page: grey-blue background, dark Arial text */
     color: #1f6feb;
 }
 
-/* ===== message line ===== */
-.message {   /* sticky result message at the top of the page */
+
+.message {   
     min-height: 0;
     text-align: center;
     position: sticky;
@@ -70,7 +66,7 @@ body {   /* whole page: grey-blue background, dark Arial text */
     z-index: 5;
 }
 
-.message span {   /* the message sits in a small white box */
+.message span {   
     display: inline-block;
     margin-top: 8px;
     padding: 8px 16px;
@@ -87,8 +83,8 @@ body {   /* whole page: grey-blue background, dark Arial text */
     color: #c62828;
 }
 
-/* ===== buttons (every button has ONE class) ===== */
-.btn, .btn-grey, .btn-red {   /* shape of every button */
+
+.btn, .btn-grey, .btn-red {   
     display: inline-block;
     padding: 7px 14px;
     font-family: inherit;
@@ -99,23 +95,23 @@ body {   /* whole page: grey-blue background, dark Arial text */
     cursor: pointer;
 }
 
-.btn {   /* blue: the main action (Add, Save, Approve) */
+.btn {  
     background-color: #1f6feb;
     border-color: #1f6feb;
     color: white;
 }
 
-.btn-grey {   /* white: other actions (Reset, Clear, Edit, Logout) */
+.btn-grey {  
     background-color: white;
     color: #1a2233;
 }
 
-.btn-red {   /* white with red text: Delete, Reject */
+.btn-red {   
     background-color: white;
     color: #c62828;
 }
 
-td .btn, td .btn-grey, td .btn-red {   /* buttons inside a table row are smaller */
+td .btn, td .btn-grey, td .btn-red {   
     padding: 6px 10px;
     font-size: 13px;
     margin: 2px;
@@ -125,7 +121,7 @@ td .btn-grey:hover, td .btn-red:hover {
     background-color: #eef4ff;
 }
 
-/* ===== sidebar + content ===== */
+
 .portal {
     display: flex;
     align-items: flex-start;
@@ -135,7 +131,7 @@ td .btn-grey:hover, td .btn-red:hover {
     padding: 22px;
 }
 
-.side {   /* white menu box */
+.side { 
     flex: 0 0 210px;
     padding: 16px;
     background-color: white;
@@ -163,7 +159,7 @@ td .btn-grey:hover, td .btn-red:hover {
     color: #1f6feb;
 }
 
-.side a.active {   /* the page that is open now */
+.side a.active {  
     background-color: #1f6feb;
     color: white;
 }
@@ -173,7 +169,7 @@ td .btn-grey:hover, td .btn-red:hover {
     min-width: 0;
 }
 
-/* ===== page heading ===== */
+
 .pagehead {
     margin-bottom: 18px;
 }
@@ -189,15 +185,15 @@ td .btn-grey:hover, td .btn-red:hover {
     color: #667085;
 }
 
-.pagehead .eyebrow {   /* small blue line above the heading */
+.pagehead .eyebrow {  
     color: #1f6feb;
     font-size: 11px;
     font-weight: bold;
     letter-spacing: 1.2px;
 }
 
-/* ===== white panels ===== */
-.panel {   /* white box with a thin border */
+
+.panel {  
     margin-bottom: 16px;
     padding: 18px;
     background-color: white;
@@ -215,7 +211,7 @@ td .btn-grey:hover, td .btn-red:hover {
     margin: 0 0 10px;
 }
 
-.panelhead {   /* panel title on the left, search or filter on the right */
+.panelhead {  
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -228,8 +224,8 @@ td .btn-grey:hover, td .btn-red:hover {
     margin-bottom: 4px;
 }
 
-/* ===== filter row ===== */
-.filter {   /* label and dropdown on one row */
+
+.filter {  
     display: flex;
     align-items: center;
     gap: 8px;
@@ -241,7 +237,7 @@ td .btn-grey:hover, td .btn-red:hover {
     white-space: nowrap;
 }
 
-.filter select {   /* the status dropdown */
+.filter select {  
     width: 100%;
     min-width: 155px;
     padding: 9px 10px;
@@ -257,7 +253,7 @@ td .btn-grey:hover, td .btn-red:hover {
     border-color: #1f6feb;
 }
 
-table select {   /* driver dropdown inside a table row */
+table select {  
     min-width: 135px;
     padding: 6px;
     border: 1px solid #cbd2dc;
@@ -267,8 +263,8 @@ table select {   /* driver dropdown inside a table row */
     font: inherit;
 }
 
-/* ===== tables ===== */
-.tablebox {   /* wide tables scroll sideways on a small screen */
+
+.tablebox {   
     width: 100%;
     overflow-x: auto;
 }
@@ -296,18 +292,18 @@ td {
     font-size: 13px;
 }
 
-tr:last-child td {   /* no line under the last row */
+tr:last-child td {  
     border-bottom: 0;
 }
 
-.empty {   /* centred grey text when a table has no rows */
+.empty {   
     padding: 18px !important;
     color: #667085;
     text-align: center !important;
 }
 
-/* ===== status badges ===== */
-.badge {   /* small rounded status label */
+
+.badge {   
     display: inline-block;
     padding: 3px 9px;
     border: 1px solid #dfe3ea;
@@ -327,7 +323,7 @@ tr:last-child td {   /* no line under the last row */
     color: #c62828;
 }
 
-/* ===== small screens ===== */
+
 @media screen and (max-width: 800px) {
     .portal {
         flex-direction: column;
