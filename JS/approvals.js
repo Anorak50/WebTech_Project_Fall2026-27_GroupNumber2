@@ -1,15 +1,3 @@
-// ===== JS/approvals.js - booking approvals for approvals.html (MEMBER 3) =====
-// This file is loaded only by Pages/approvals.html, so it holds only the booking
-// approval and driver assignment work. The data is kept in localStorage
-// (the shared team keys below).
-// The page first checks wf_session: the session role must be "manager".
-//
-// Pages/approvals.html (no form - the buttons and the driver dropdown are built by renderApprovals)
-//   bookingFilter (dropdown) filters the bookings table (tbody id bookingRows)
-//   the driver dropdown of a booking has the id "driver_" + booking id
-//
-// localStorage keys (team plan): wf_users, wf_cars, wf_bookings, wf_leaves, wf_session
-
 let bookingsKey = "wf_bookings";
 let carsKey = "wf_cars";
 let usersKey = "wf_users";
@@ -27,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderApprovals();
 });
 
-/* ---------- access: the page needs a manager session ---------- */
+// manager session  
 function checkAccess() {
     let session = getSession();
     let app = document.getElementById("app");
@@ -62,7 +50,7 @@ function getManagerName() {
     return "Manager";
 }
 
-/* ---------- approvals.html: booking approvals and driver assignment ---------- */
+// booking approvals and driver assignment
 function getAvailableDrivers(booking) {
     let users = readList(usersKey);
     let leaves = readList(leavesKey);
@@ -100,7 +88,7 @@ function driverOptions(booking) {
         }
     }
 
-    // the driver saved on the booking is no longer active or available: keep him visible, but disabled
+    // the driver saved on the booking is no longer active or available keep him visible, but disabled
     if (booking.driverId && currentDriver === null) {
         let oldDriver = findById(readList(usersKey), booking.driverId);
         if (oldDriver) {
@@ -270,7 +258,7 @@ function filterBookings() {
     renderApprovals();
 }
 
-/* ---------- small helpers ---------- */
+
 // show a result message at the top of the page (red when isError is true)
 function showMessage(message, isError) {
     let messageBox = document.getElementById("msg");
@@ -292,7 +280,7 @@ function escapeHtml(value) {
         .replace(/'/g, "&#039;");
 }
 
-/* ---------- status badges and names ---------- */
+//status badges and names
 function statusBadge(status) {
     let safeStatus = String(status || "Unknown");
     let className = safeStatus.toLowerCase().replace(/[^a-z]/g, "");
@@ -323,7 +311,6 @@ function formatPrice(price) {
     return "$" + amount.toFixed(2);
 }
 
-/* ---------- localStorage data (the shared team keys) ---------- */
 function readList(key) {
     let storedData = localStorage.getItem(key);
 

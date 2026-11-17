@@ -1,16 +1,3 @@
-// ===== JS/managerlogin.js - manager login for the manager login page (MEMBER 3) =====
-// The form is validated first (the project rules below). When the format is
-// correct, the account is looked up in wf_users: if the email and password
-// match a manager account, wf_session is saved and the portal opens.
-// The demo manager account (manager@wf.com) is seeded when it is missing,
-// so the demo link on the page always works.
-//
-// Pages/managerlogin.html
-//   managerLoginForm   MgrLoginEmail + MgrLoginEmailError, MgrLoginPassword + MgrLoginPasswordError, MgrLoginMsg (the result line)
-//   rules: email required + correct format; password required, 6+ characters with a letter and a number
-//
-// localStorage keys (team plan): wf_users, wf_session
-
 let usersKey = "wf_users";
 let sessionKey = "wf_session";
 
@@ -30,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-/* ---------- managerlogin.html ---------- */
+
 function checkManagerLoginForm() {
     let results = [
         checkEmail("MgrLoginEmail", "MgrLoginEmailError", "Please Enter The Email"),
@@ -43,7 +30,7 @@ function checkManagerLoginForm() {
     loginManager();
 }
 
-// check the account in wf_users and, when it is a manager account, start the session
+// check the account in wf_users and ifit is a manager account start the session
 function loginManager() {
     seedDemoManager();
 
@@ -74,7 +61,7 @@ function loginManager() {
     window.location.href = "manager.html";
 }
 
-// the demo manager account must exist, or nobody can enter the portal on a fresh browser
+// the demo manager account must exist or nobody can enter the portal on a fresh browser
 function seedDemoManager() {
     let users = readList(usersKey);
     if (findUserByEmail(users, "manager@wf.com") !== null) {
@@ -101,7 +88,7 @@ function userPassword(user) {
     return "";
 }
 
-/* ---------- small helpers ---------- */
+
 function wrong(errorId, text) {
     document.getElementById(errorId).innerHTML = text;
     return false;
@@ -123,7 +110,7 @@ function passed(results) {
     return allCorrect;
 }
 
-// show one result line (green when every field is correct, red when not)
+// show one result line 
 function finish(msgId, results, okText, errorText) {
     let msg = document.getElementById(msgId);
     if (passed(results)) {
@@ -152,7 +139,7 @@ function hookForm(formId, checkFunction) {
     });
 }
 
-// email: correct email format
+//correct email format
 function checkEmail(inputId, errorId, emptyText) {
     let email = document.getElementById(inputId).value.trim();
     let regexpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -165,7 +152,7 @@ function checkEmail(inputId, errorId, emptyText) {
     return right(errorId);
 }
 
-// password format: 6+ characters, at least one letter and one number
+// password format 6+ characters, at least one letter and one number
 function checkPassword(inputId, errorId, emptyText) {
     let pass = document.getElementById(inputId).value;
     if (pass === "") {
@@ -183,7 +170,7 @@ function checkPassword(inputId, errorId, emptyText) {
     return right(errorId);
 }
 
-/* ---------- localStorage data (the shared team keys) ---------- */
+
 function readList(key) {
     let storedData = localStorage.getItem(key);
 

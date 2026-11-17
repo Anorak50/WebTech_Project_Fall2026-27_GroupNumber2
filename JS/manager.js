@@ -1,17 +1,3 @@
-// ===== JS/manager.js - fleet page work for manager.html (MEMBER 3) =====
-// This file is loaded only by Pages/manager.html, so it holds only the fleet form checks
-// and the fleet work. The data is kept in localStorage (the shared team keys below).
-// The page first checks wf_session: the session role must be "manager".
-//
-// Pages/manager.html (fleet)
-//   carForm   CarName + CarNameError, CarType (dropdown) + CarTypeError, CarSeats + CarSeatsError,
-//             CarPrice + CarPriceError, CarBranch (dropdown) + CarBranchError, CarStatus (dropdown, no rule), CarId (hidden)
-//   rules: car name entered, car type selected, seats a whole number greater than zero, price greater than zero,
-//          branch selected (the branch list is seeded with the three Wayfare branches when wf_branches is empty)
-//   carSearch filters the fleet table (tbody id carRows); the counts go in totalCars, availableCars, bookedCars, maintenanceCars
-//
-// localStorage keys (team plan): wf_users, wf_cars, wf_bookings, wf_branches, wf_session
-
 let carsKey = "wf_cars";
 let bookingsKey = "wf_bookings";
 let usersKey = "wf_users";
@@ -40,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("carSearch").addEventListener("input", renderFleet);
 });
 
-/* ---------- access: the page needs a manager session ---------- */
+//access manager session 
 function checkAccess() {
     let session = getSession();
     let app = document.getElementById("app");
@@ -75,7 +61,7 @@ function getManagerName() {
     return "Manager";
 }
 
-/* ---------- manager.html: fleet checks ---------- */
+//checks manager.html
 function checkCarName() {
     if (document.getElementById("CarName").value.trim() === "") {
         return wrong("CarNameError", "Please enter the car name");
@@ -110,10 +96,6 @@ function checkCarForm() {
     return passed(results);
 }
 
-/* ---------- manager.html: fleet ---------- */
-// the three Wayfare branches (the same branches a manager picks at registration);
-// they are saved to wf_branches only when no branch list exists yet, so branches
-// added later (for example by the admin) are never overwritten
 function seedBranches() {
     if (readList(branchesKey).length > 0) {
         return;
@@ -300,7 +282,7 @@ function deleteCar(id) {
     showMessage("Car deleted successfully.", false);
 }
 
-/* ---------- small helpers ---------- */
+
 function wrong(errorId, text) {
     document.getElementById(errorId).innerHTML = text;
     return false;
@@ -358,7 +340,7 @@ function checkSelect(selectId, errorId, text) {
     return right(errorId);
 }
 
-/* ---------- status badges and names ---------- */
+
 function statusBadge(status) {
     let safeStatus = String(status || "Unknown");
     let className = safeStatus.toLowerCase().replace(/[^a-z]/g, "");
@@ -381,7 +363,7 @@ function formatPrice(price) {
     return "$" + amount.toFixed(2);
 }
 
-/* ---------- localStorage data (the shared team keys) ---------- */
+
 function readList(key) {
     let storedData = localStorage.getItem(key);
 

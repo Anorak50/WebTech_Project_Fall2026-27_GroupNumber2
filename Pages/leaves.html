@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/leaves.css">
+        <script src="../JS/driver.js" defer></script>
+        <title> Driver - Leave and Profile </title>
+    </head>
+    <body>
+
+        <div class="topbar">
+            <a class="logo" href="../index.html">  Wayfare </a>
+            <div class="menu">
+                <a href="../index.html"> Home </a>
+                <a href="driver.html"> My trips </a>
+                <a class="active" href="leaves.html"> Leave and profile </a>
+                <span class="muted"> Rafi Driver (driver) </span>
+            </div>
+            <a class="btn-grey" href="driverlogin.html"> Logout </a>
+        </div>
+
+        <div class="container">
+            
+                <p id="msg" class="message"></p>
+
+                <div class="panel">
+                    <h3> My profile </h3>
+                    <p>
+                        <b>Name:</b> Rafi Driver <br>
+                        <b>Email:</b> driver@wf.com <br>
+                        <b>Phone:</b> 01700000003 <br>
+                        <b>Age:</b> 32 <br>
+                        <b>Gender:</b> Male <br>
+                        <b>License type:</b> Medium
+                    </p>
+                </div>
+
+                <form id="profileForm" class="panel">
+                    <h3> Edit profile </h3>
+
+                    <h4>Name</h4>
+                    <input type="text" id="DriverName" value="Rafi Driver" placeholder="Enter Your Name">
+                    <p id="DriverNameError" class="error"></p>
+
+                    <h4>Email</h4>
+                    <input type="email" id="DriverEmail" value="driver@wf.com" placeholder="Enter Your Email">
+                    <p id="DriverEmailError" class="error"></p>
+
+                    <h4>Phone</h4>
+                    <input type="text" id="DriverPhone" value="01700000003" placeholder="01XXXXXXXXX">
+                    <p id="DriverPhoneError" class="error"></p>
+
+                    <h4>Age</h4>
+                    <input type="number" id="DriverAge" value="32" placeholder="Enter Your Age">
+                    <p id="DriverAgeError" class="error"></p>
+
+                    <h4>Gender</h4>
+                    <div class="radiogroup">
+                        <label><input type="radio" name="gender" value="Male" checked> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                    </div>
+                    <p id="DriverGenderError" class="error"></p>
+
+                    <h4>License Type</h4>
+                        <select id="DriverLicense">
+                            <option value=""> Select license type </option>
+                            <option value="Light"> Light </option>
+                            <option value="Medium" selected> Medium </option>
+                            <option value="Heavy"> Heavy </option>
+                        </select>
+                    <p id="DriverLicenseError" class="error"></p>
+
+                    <input type="submit" class="btn" value="Save profile">
+                    <input type="reset" class="btn-grey" value="Reset">
+                </form>
+
+
+                <form id="passwordForm" class="panel">
+                    <h3> Change password </h3>
+
+                    <h4>New Password</h4>
+                    <input type="password" id="NewPassword" placeholder="Enter your new password">
+                    <p id="NewPasswordError" class="error"></p>
+
+                    <h4>Confirm Password</h4>
+                    <input type="password" id="ConfirmPassword" placeholder="Confirm your new password">
+                    <p id="ConfirmPasswordError" class="error"></p>
+
+                    <input type="submit" class="btn" value="Change password">
+                    <input type="reset" class="btn-grey" value="Reset">
+                </form>
+
+                
+                <div class="panel">
+                    <h3> My leave requests </h3>
+                    <div class="tablebox">
+                        <table id="leaveTable">
+                            <tr>
+                                <th> Date </th>
+                                <th> Type </th>
+                                <th> Duration </th>
+                                <th> Reason </th>
+                                <th> Status </th>
+                            </tr>
+                            <tr>
+                                <td> 2026-11-20 </td>
+                                <td> Family </td>
+                                <td> Full day </td>
+                                <td> Family event </td>
+                                <td> <span class="reqPending"> Pending </span> </td>
+                            </tr>
+                            <tr>
+                                <td> 2026-10-10 </td>
+                                <td> Sick </td>
+                                <td> Half day </td>
+                                <td> Medical checkup </td>
+                                <td> <span class="reqApproved"> Approved </span> </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    
+                    <div class="actions">
+                        <button class="btn-grey" id="editLeaveBtn" disabled> Edit </button>
+                        <button class="btn-red" id="deleteLeaveBtn" disabled> Delete </button>
+                    </div>
+                </div>
+
+
+                <form id="leaveForm" class="panel">
+                    <h3> New leave request </h3>
+
+                    <h4>Leave Type</h4>
+                        <select id="LeaveType">
+                            <option value=""> Select leave type </option>
+                            <option value="Sick"> Sick </option>
+                            <option value="Family"> Family </option>
+                            <option value="Personal"> Personal </option>
+                        </select>
+                    <p id="LeaveTypeError" class="error"></p>
+
+                    <h4>Leave Date</h4>
+                        <input type="date" id="LeaveDate">
+                    <p id="LeaveDateError" class="error"></p>
+
+                    <h4>Duration</h4>
+                    <div class="radiogroup">
+                        <label><input type="radio" name="duration" value="Full day"> Full day</label>
+                        <label><input type="radio" name="duration" value="Half day"> Half day</label>
+                    </div>
+                    <p id="LeaveDurationError" class="error"></p>
+
+                    <h4>Reason</h4>
+                        <textarea id="LeaveReason" placeholder="Write the reason"></textarea>
+                    <p id="LeaveReasonError" class="error"></p>
+
+                    <input type="submit" class="btn" value="Add request">
+                    <input type="reset" class="btn-grey" value="Reset">
+                </form>
+
+                
+            
+        </div>
+
+    </body>
+</html>

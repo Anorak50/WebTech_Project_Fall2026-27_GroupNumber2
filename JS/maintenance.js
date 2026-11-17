@@ -1,17 +1,3 @@
-// ===== JS/maintenance.js - maintenance log for maintenance.html (MEMBER 3) =====
-// This file is loaded only by Pages/maintenance.html, so it holds only the
-// maintenance form checks and the maintenance log work. The data is kept in
-// localStorage (the shared team keys below).
-// The page first checks wf_session: the session role must be "manager".
-//
-// Pages/maintenance.html
-//   maintenanceForm   MaintenanceCar (dropdown) + MaintenanceCarError, MaintenanceNote + MaintenanceNoteError,
-//                     MaintenanceDate + MaintenanceDateError
-//   rules: a car selected, a note entered, a date selected. Adding a record sets the car to Maintenance,
-//          and deleting the last record for a car sets it back to Available.
-//
-// localStorage keys (team plan): wf_users, wf_cars, wf_maintenance, wf_session
-
 let maintenanceKey = "wf_maintenance";
 let carsKey = "wf_cars";
 let usersKey = "wf_users";
@@ -32,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderMaintenance();
 });
 
-/* ---------- access: the page needs a manager session ---------- */
+// access needs a manager session
 function checkAccess() {
     let session = getSession();
     let app = document.getElementById("app");
@@ -67,7 +53,7 @@ function getManagerName() {
     return "Manager";
 }
 
-/* ---------- maintenance.html: checks ---------- */
+// checksmaintenance.html
 function checkMaintenanceForm() {
     let results = [
         checkSelect("MaintenanceCar", "MaintenanceCarError", "Please select a car"),
@@ -91,7 +77,7 @@ function checkDate() {
     return right("MaintenanceDateError");
 }
 
-/* ---------- maintenance.html: maintenance log ---------- */
+// maintenance log 
 function fillMaintenanceCars() {
     let carSelect = document.getElementById("MaintenanceCar");
     if (!carSelect) {
@@ -187,7 +173,7 @@ function deleteMaintenance(id) {
     }
     maintenance = keptRecords;
 
-    // deleting the last record for a car under maintenance makes the car available again
+    // removes the last record for a car under maintenance and makes the car available again
     let cars = readList(carsKey);
     let car = findById(cars, record.carId);
     if (car && car.status === "Maintenance") {
@@ -216,7 +202,7 @@ function today() {
     return year + "-" + month + "-" + day;
 }
 
-/* ---------- small helpers ---------- */
+
 function wrong(errorId, text) {
     document.getElementById(errorId).innerHTML = text;
     return false;
@@ -237,7 +223,7 @@ function passed(results) {
     return allCorrect;
 }
 
-// show a result message at the top of the page (red when isError is true)
+// show a result message at the top of the page 
 function showMessage(message, isError) {
     let messageBox = document.getElementById("msg");
     if (messageBox) {
@@ -266,14 +252,14 @@ function checkSelect(selectId, errorId, text) {
     return right(errorId);
 }
 
-/* ---------- status badges ---------- */
+
 function statusBadge(status) {
     let safeStatus = String(status || "Unknown");
     let className = safeStatus.toLowerCase().replace(/[^a-z]/g, "");
     return '<span class="badge st-' + className + '">' + escapeHtml(safeStatus) + "</span>";
 }
 
-/* ---------- localStorage data (the shared team keys) ---------- */
+
 function readList(key) {
     let storedData = localStorage.getItem(key);
 
