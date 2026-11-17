@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/managerlogin.css">
+        <script src="../JS/managerlogin.js" defer></script>
+        <title> Manager - Login </title>
+    </head>
+    <body>
+
+        
+        <div class="topbar">
+            <a class="logo" href="../index.html"> Wayfare </a>
+            <div class="menu">
+                <a href="../index.html"> Home </a>
+                <a href="managerregister.html"> Register </a>
+            </div>
+        </div>
+
+        
+        <div class="splitcard">
+
+            <div class="brand">
+                <h1> Manager Portal </h1>
+                <p> The control room of your branch. Everything a Wayfare manager runs, in one place. </p>
+                <ul class="brandlist">
+                    <li> Fleet Management - add, edit and track every car </li>
+                    <li> Booking Approvals - approve requests and assign drivers </li>
+                    <li> Maintenance Log - keep every car road-ready </li>
+                </ul>
+            </div>
+
+            <div class="formside">
+
+               
+                <form id="managerLoginForm">
+                    <h2> Manager Login </h2>
+                    <p class="muted center"> Welcome back. Sign in to your manager portal. </p>
+
+                    <label for="MgrLoginEmail"> Email
+                        <input type="email" id="MgrLoginEmail" placeholder="Enter Your Email">
+                    </label>
+                    <p id="MgrLoginEmailError" class="error"></p>
+
+                    <label for="MgrLoginPassword"> Password
+                        <input type="password" id="MgrLoginPassword" placeholder="Enter Your Password">
+                    </label>
+                    <p id="MgrLoginPasswordError" class="error"></p>
+
+                    <input type="submit" class="btn" value="Login">
+                    <input type="reset" class="btn-grey" value="Reset">
+                    <p id="MgrLoginMsg" class="message"></p>
+
+                    <p class="muted center"> New manager? <a href="managerregister.html"> Create an account </a> </p>
+                    <p class="muted center"> Demo account: manager@wf.com / manager123. Demo link: <a href="manager.html" id="demoLink"> open the Manager portal </a> </p>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="footer"> &copy; 2026 Wayfare Car Rental - Created by Team Wayfare </div>
+
+    </body>
+</html>

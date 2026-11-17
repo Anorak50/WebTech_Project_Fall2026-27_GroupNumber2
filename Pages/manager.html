@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/manager.css">
+        <script src="../JS/manager.js" defer></script>
+        <title> Manager - Fleet </title>
+    </head>
+    <body>
+
+       
+        <div class="topbar">
+            <a class="logo" href="../index.html"> Wayfare </a>
+            <div class="menu">
+                <a href="../index.html"> Home </a>
+                <a href="manager.html"> My Portal </a>
+                <span class="muted" id="userName"> Manager (manager) </span>
+            </div>
+            <a class="btn-grey" href="managerlogin.html"> Logout </a>
+        </div>
+
+       
+        <div id="msg" class="message"></div>
+
+        <div class="portal">
+
+            
+            <div class="side">
+                <h3> Manager Menu </h3>
+                <a class="active" href="manager.html"> Fleet Management </a>
+                <a href="approvals.html"> Booking Approvals </a>
+                <a href="maintenance.html"> Maintenance Log </a>
+                <a href="profile.html"> My Profile </a>
+            </div>
+
+            
+            <div class="content" id="app">
+
+                <div class="pagehead">
+                    <p class="eyebrow"> MANAGER / FLEET </p>
+                    <h1> Fleet Management </h1>
+                    <p> Manage cars, update their information and control fleet availability. </p>
+                </div>
+
+                
+                <div class="stats">
+                    <div> <span> Total Cars </span> <strong id="totalCars"> 0 </strong> </div>
+                    <div> <span> Available </span> <strong id="availableCars"> 0 </strong> </div>
+                    <div> <span> Booked </span> <strong id="bookedCars"> 0 </strong> </div>
+                    <div> <span> Maintenance </span> <strong id="maintenanceCars"> 0 </strong> </div>
+                </div>
+
+               
+                <div class="panel">
+                    <h2 id="carFormTitle"> Add New Car </h2>
+                    <form id="carForm">
+                        <input type="hidden" id="CarId">
+
+                        <fieldset>
+                            <legend> Car Information </legend>
+                            <table class="formtable">
+                                <tr>
+                                    <td><label for="CarName"> Car Name: </label></td>
+                                    <td>
+                                        <input type="text" id="CarName" placeholder="Enter car name">
+                                        <p id="CarNameError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="CarType"> Car Type: </label></td>
+                                    <td>
+                                        <select id="CarType">
+                                            <option value=""> Select car type </option>
+                                            <option value="Sedan"> Sedan </option>
+                                            <option value="SUV"> SUV </option>
+                                            <option value="Van"> Van </option>
+                                            <option value="Hatchback"> Hatchback </option>
+                                        </select>
+                                        <p id="CarTypeError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="CarSeats"> Seats: </label></td>
+                                    <td>
+                                        <input type="number" id="CarSeats" min="1" placeholder="Enter seat count">
+                                        <p id="CarSeatsError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="CarPrice"> Price Per Day ($): </label></td>
+                                    <td>
+                                        <input type="number" id="CarPrice" min="1" step="0.01" placeholder="Enter daily price">
+                                        <p id="CarPriceError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="CarBranch"> Branch: </label></td>
+                                    <td>
+                                        <select id="CarBranch">
+                                            <option value=""> No branch assigned </option>
+                                        </select>
+                                        <p id="CarBranchError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="CarStatus"> Status: </label></td>
+                                    <td>
+                                        <select id="CarStatus">
+                                            <option value="Available"> Available </option>
+                                            <option value="Booked"> Booked </option>
+                                            <option value="Maintenance"> Maintenance </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class="actions">
+                                <input type="submit" id="carSubmit" class="btn" value="Add Car">
+                                <input type="reset" class="btn-grey" value="Clear">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+              
+                <div class="panel">
+                    <div class="panelhead">
+                        <div>
+                            <h2> Car Fleet </h2>
+                            <p class="muted"> All cars currently registered in Wayfare. </p>
+                        </div>
+                        <input type="text" id="carSearch" class="search" placeholder="Search car name">
+                    </div>
+
+                    <div class="tablebox">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> ID </th>
+                                    <th> Car Name </th>
+                                    <th> Type </th>
+                                    <th> Seats </th>
+                                    <th> Price / Day </th>
+                                    <th> Branch </th>
+                                    <th> Status </th>
+                                    <th> Actions </th>
+                                </tr>
+                            </thead>
+                            <tbody id="carRows">
+                                <tr><td colspan="8"> Loading cars... </td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>

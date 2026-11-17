@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/approvals.css">
+        <script src="../JS/approvals.js" defer></script>
+        <title> Manager - Booking Approvals </title>
+    </head>
+    <body>
+
+       
+        <div class="topbar">
+            <a class="logo" href="../index.html"> Wayfare </a>
+            <div class="menu">
+                <a href="../index.html"> Home </a>
+                <a href="manager.html"> My Portal </a>
+                <span class="muted" id="userName"> Manager (manager) </span>
+            </div>
+            <a class="btn-grey" href="managerlogin.html"> Logout </a>
+        </div>
+
+      
+        <div id="msg" class="message"></div>
+
+        <div class="portal">
+
+            <div class="side">
+                <h3> Manager Menu </h3>
+                <a href="manager.html"> Fleet Management </a>
+                <a class="active" href="approvals.html"> Booking Approvals </a>
+                <a href="maintenance.html"> Maintenance Log </a>
+                <a href="profile.html"> My Profile </a>
+            </div>
+
+           
+            <div class="content" id="app">
+
+                <div class="pagehead">
+                    <p class="eyebrow"> MANAGER / BOOKINGS </p>
+                    <h1> Booking Approvals </h1>
+                    <p> Review customer bookings, approve or reject requests and assign active drivers. </p>
+                </div>
+
+             
+                <div class="panel">
+                    <div class="panelhead">
+                        <div>
+                            <h2> Booking Requests </h2>
+                            <p class="muted"> A driver can be assigned when a booking is approved or changed later. </p>
+                        </div>
+                        <div class="filter">
+                            <label for="bookingFilter"> Filter by status: </label>
+                            <select id="bookingFilter">
+                                <option value=""> All statuses </option>
+                                <option value="Pending"> Pending </option>
+                                <option value="Approved"> Approved </option>
+                                <option value="Rejected"> Rejected </option>
+                                <option value="Cancelled"> Cancelled </option>
+                                <option value="Started"> Started </option>
+                                <option value="Completed"> Completed </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="tablebox">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> Booking ID </th>
+                                    <th> Customer </th>
+                                    <th> Car </th>
+                                    <th> Rental Dates </th>
+                                    <th> Total </th>
+                                    <th> Status </th>
+                                    <th> Driver </th>
+                                    <th> Actions </th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookingRows">
+                                <tr><td colspan="8"> Loading bookings... </td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>
