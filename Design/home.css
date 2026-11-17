@@ -1,0 +1,252 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    background-color: rgb(214, 222, 238);
+    color: #1a2233;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.topbar{
+    position:sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;                   
+    gap: 18px;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #dfe3ea;
+}
+.menu {
+    display: flex;
+    margin:auto 0;
+    gap: 18px;
+}
+.menu a {
+    color: #1a2233;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #1f6feb;                  
+}
+.logo {
+    display: flex;
+    gap: 8px;                        
+    margin:auto auto auto 0;             
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f6feb;
+    text-decoration: none;
+}
+.header{
+    background-color: #134faa;
+    color: white;
+    text-align: center;
+    padding: 56px 20px 100px;
+}
+.header h1{
+    margin-bottom: 8px;
+    font-size: 35px;
+}
+.header p {
+    margin: 0;
+}
+.container{
+    max-width: 1040px;
+    padding: 20px;
+    margin: 0 auto;
+}
+.filterbox {   
+    overflow: hidden;
+    margin-top: -70px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #dfe3ea;
+    border-radius: 14px;
+}
+.field {   
+    float: left;
+    width: 15%;
+    margin-right: 1%;
+}
+.filterbox label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.filterbox select,
+.filterbox input[type="date"],
+.filterbox input[type="time"]{
+    width: 100%;
+    padding: 12px 10px;
+    font-family: inherit;
+    font-size: 14px;
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    background-color: #f4f6fa;
+}
+.error{
+    margin: 6px 0 0;
+    color: #c62828;
+    font-size: 13px;
+}
+.searchbtn{
+    float: left;
+    width: 15%;
+    margin-top: 30px;
+}
+.searchbtn .btn{
+    padding: 12px 22px;
+    border-radius: 5px;
+}
+h2{
+    margin: 26px 0 12px;
+}
+.carrow{
+    overflow: hidden;
+    margin-bottom: 16px;
+    padding: 18px;
+    background-color: white;
+    border: 1px solid #dfe3ea;
+    border-radius: 12px;
+}
+.carpic{
+    float: left;
+    border-radius: 10px;
+}
+
+.carpic img{
+    display: block;
+    width: 260px;
+    height: 170px;
+}
+
+
+
+.carname{
+    display: inline;
+    padding-left: 10px;
+    width: 60%;
+    font-size: 22px;
+}
+
+.carprice{
+    display: inline;
+    padding-left: 10px;
+    margin-left: 20px;
+    text-align: right;
+    font-size: 30px;
+    color: #134faa;
+}
+
+.carspecs{
+    list-style: none;
+    margin: 14px 0;
+    padding: 10px 14px;
+    color: #4b5563;
+    font-size: 14px;
+}
+
+.carspecs li{
+    display: inline-block;
+    margin-right: 24px;
+    padding-left: 10px;
+}
+
+.carlocation{
+    float: left;
+    margin: 8px 0 0;
+    padding-left: 10px;
+}
+
+.carinfo .btn,
+.carinfo .btn-grey{
+    float: right;
+}
+
+.grid{
+    overflow: hidden;
+}
+
+.card{
+    float: left;
+    width: 23%;
+    margin: 0 1% 14px 1%;
+    background-color: white;
+    border: 1px solid #dfe3ea;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cardimg{
+    
+    font-size: 54px;
+    text-align: center;
+    padding: 18px;
+    background-color: #f4f6fa;
+}
+
+.cardbody{
+    padding: 12px 14px;
+}
+
+.cardbody h3{
+    margin: 0;
+}
+
+.step, .branchcard{
+    padding: 16px;
+    text-align: center;
+}
+
+.step b{
+    display: block;
+    font-size: 30px;
+}
+
+.cardlink{
+    margin-top: 12px;
+}
+
+.center{
+    font-size: 16px;
+    margin:0 0 10px 0;
+}
+
+.footer{
+    text-align: center;
+    color: #667085;
+    padding: 26px;
+    border-top: 1px solid #dfe3ea;
+    margin-top: 30px;
+}
+
+.btn, .btn-grey{
+    display: inline-block;
+    padding: 7px 14px;
+    border: 1px solid #dfe3ea;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn{
+    background-color: #1f6feb;
+    border-color: #1f6feb;
+    color: white;
+}
+
+.btn-grey{
+    background-color: white;
+    color: #1a2233;
+}
+
+button:disabled{
+    opacity: 0.45;
+    cursor: default;
+}
