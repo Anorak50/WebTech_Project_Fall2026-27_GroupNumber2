@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/maintenance.css">
+        <script src="../JS/maintenance.js" defer></script>
+        <title> Manager - Maintenance </title>
+    </head>
+    <body>
+
+        <!-- ===== top bar ===== -->
+        <div class="topbar">
+            <a class="logo" href="../index.html"> Wayfare </a>
+            <div class="menu">
+                <a href="../index.html"> Home </a>
+                <a href="manager.html"> My Portal </a>
+                <span class="muted" id="userName"> Manager (manager) </span>
+            </div>
+            <a class="btn-grey" href="managerlogin.html"> Logout </a>
+        </div>
+
+        <!-- ===== message line ===== -->
+        <div id="msg" class="message"></div>
+
+        <div class="portal">
+
+            <!-- ===== sidebar ===== -->
+            <div class="side">
+                <h3> Manager Menu </h3>
+                <a href="manager.html"> Fleet Management </a>
+                <a href="approvals.html"> Booking Approvals </a>
+                <a class="active" href="maintenance.html"> Maintenance Log </a>
+                <a href="profile.html"> My Profile </a>
+            </div>
+
+            <!-- ===== content ===== -->
+            <div class="content" id="app">
+
+                <div class="pagehead">
+                    <p class="eyebrow"> MANAGER / FLEET CARE </p>
+                    <h1> Maintenance Log </h1>
+                    <p> Record vehicle maintenance and keep unavailable cars out of the rental fleet. </p>
+                </div>
+
+                <!-- ===== maintenance form ===== -->
+                <div class="panel">
+                    <h2> Add Maintenance Entry </h2>
+                    <form id="maintenanceForm">
+                        <fieldset>
+                            <legend> Maintenance Information </legend>
+                            <table class="formtable">
+                                <tr>
+                                    <td><label for="MaintenanceCar"> Select Car: </label></td>
+                                    <td>
+                                        <select id="MaintenanceCar">
+                                            <option value=""> Select a car </option>
+                                        </select>
+                                        <p id="MaintenanceCarError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="MaintenanceNote"> Maintenance Note: </label></td>
+                                    <td>
+                                        <textarea id="MaintenanceNote" rows="4" placeholder="Describe the maintenance work"></textarea>
+                                        <p id="MaintenanceNoteError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="MaintenanceDate"> Date: </label></td>
+                                    <td>
+                                        <input type="date" id="MaintenanceDate">
+                                        <p id="MaintenanceDateError" class="error"></p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class="actions">
+                                <input type="submit" class="btn" value="Add Entry">
+                                <input type="reset" class="btn-grey" value="Clear">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <!-- ===== maintenance table ===== -->
+                <div class="panel">
+                    <div class="panelhead">
+                        <div>
+                            <h2> Maintenance Records </h2>
+                            <p class="muted"> Deleting the last maintenance record returns a car to Available if its current status is Maintenance. </p>
+                        </div>
+                    </div>
+
+                    <div class="tablebox">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> Record ID </th>
+                                    <th> Car </th>
+                                    <th> Note </th>
+                                    <th> Date </th>
+                                    <th> Car Status </th>
+                                    <th> Action </th>
+                                </tr>
+                            </thead>
+                            <tbody id="maintenanceRows">
+                                <tr><td colspan="6"> Loading maintenance records... </td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>
