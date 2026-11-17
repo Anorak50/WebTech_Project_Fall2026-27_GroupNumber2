@@ -1,31 +1,7 @@
-// ===== JS/managerregister.js - manager registration for the manager registration page (MEMBER 3) =====
-// This file is loaded only by Pages/managerregister.html, so it holds only the
-// registration form checks and the account saving. When every check passes,
-// the new manager account is saved in wf_users, wf_session is set and the
-// portal opens. An email that is already registered is refused.
-//
-// localStorage keys (team plan): wf_users, wf_session
-//
-// Pages/managerregister.html ids:
-//   managerRegisterForm
-//   MgrName + MgrNameError          MgrEmail + MgrEmailError        MgrPhone + MgrPhoneError
-//   MgrAge + MgrAgeError            MgrExperience + MgrExperienceError
-//   radio name "mgrGender" + MgrGenderError
-//   MgrBranch (dropdown) + MgrBranchError
-//   MgrPassword + MgrPasswordError  MgrConfirm + MgrConfirmError
-//   MgrTerms (checkbox) + MgrTermsError
-//   MgrRegMsg  (the result line)
-//
-// Rules (customised for a manager):
-//   name 3+ letters/spaces, email format, phone 01XXXXXXXXX, age 21 to 60, gender radio selected,
-//   branch to manage selected, experience 0 to 40 years, password 6+ chars with a letter and a number,
-//   confirm matches, code of conduct ticked
-
 document.addEventListener("DOMContentLoaded", function () {
     hookForm("managerRegisterForm", checkManagerRegisterForm);
 });
 
-/* ---------- managerregister.html ---------- */
 function checkManagerRegisterForm() {
     let results = [
         checkName("MgrName", "MgrNameError"),
@@ -90,7 +66,7 @@ function registerManager() {
     window.location.href = "manager.html";
 }
 
-/* ---------- small helpers ---------- */
+
 function wrong(errorId, text) {
     document.getElementById(errorId).innerHTML = text;
     return false;
@@ -142,7 +118,6 @@ function hookForm(formId, checkFunction) {
 }
 
 // a dropdown must have a real option selected
-// a dropdown must have a real option selected
 function checkSelect(selectId, errorId, text) {
     if (document.getElementById(selectId).value === "") {
         return wrong(errorId, text);
@@ -150,7 +125,6 @@ function checkSelect(selectId, errorId, text) {
     return right(errorId);
 }
 
-// one radio button of the group must be checked
 // one radio button of the group must be checked
 function checkRadio(radioName, errorId, text) {
     let radios = document.querySelectorAll('input[name="' + radioName + '"]');
@@ -163,7 +137,6 @@ function checkRadio(radioName, errorId, text) {
 }
 
 // a checkbox must be ticked
-// a checkbox must be ticked
 function checkTick(boxId, errorId, text) {
     if (!document.getElementById(boxId).checked) {
         return wrong(errorId, text);
@@ -171,7 +144,6 @@ function checkTick(boxId, errorId, text) {
     return right(errorId);
 }
 
-// name: 3+ characters, letters and spaces only
 // name: 3+ characters, letters and spaces only
 function checkName(inputId, errorId) {
     let name = document.getElementById(inputId).value.trim();
@@ -189,7 +161,6 @@ function checkName(inputId, errorId) {
 }
 
 // email: correct email format
-// email: correct email format
 function checkEmail(inputId, errorId, emptyText) {
     let email = document.getElementById(inputId).value.trim();
     let regexpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -202,7 +173,6 @@ function checkEmail(inputId, errorId, emptyText) {
     return right(errorId);
 }
 
-// phone: 11 digits, starts with 01
 // phone: 11 digits, starts with 01
 function checkPhone(inputId, errorId) {
     let phone = document.getElementById(inputId).value.trim();
@@ -217,7 +187,6 @@ function checkPhone(inputId, errorId) {
 }
 
 // a number must be between min and max (age, years of experience)
-// a number must be between min and max (age, years of experience)
 function checkRange(inputId, errorId, min, max, label) {
     let value = document.getElementById(inputId).value;
     if (value === "") {
@@ -229,7 +198,6 @@ function checkRange(inputId, errorId, min, max, label) {
     return right(errorId);
 }
 
-// password format: 6+ characters, at least one letter and one number
 // password format: 6+ characters, at least one letter and one number
 function checkPassword(inputId, errorId, emptyText) {
     let pass = document.getElementById(inputId).value;
@@ -249,7 +217,6 @@ function checkPassword(inputId, errorId, emptyText) {
 }
 
 // the second password must be the same as the first
-// the second password must be the same as the first
 function checkConfirm(passId, confirmId, errorId) {
     let confirm = document.getElementById(confirmId).value;
     if (confirm === "") {
@@ -261,7 +228,6 @@ function checkConfirm(passId, confirmId, errorId) {
     return right(errorId);
 }
 
-/* ---------- localStorage data (the shared team keys) ---------- */
 function readList(key) {
     let storedData = localStorage.getItem(key);
 

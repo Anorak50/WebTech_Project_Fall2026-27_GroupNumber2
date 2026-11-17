@@ -1,19 +1,3 @@
-// ===== JS/profile.js - manager profile for profile.html (MEMBER 3) =====
-// This file is loaded only by Pages/profile.html, so it holds only the profile
-// form checks and the profile work. The data is kept in localStorage
-// (the shared team keys below).
-// The page first checks wf_session: the session role must be "manager".
-//
-// Pages/profile.html
-//   profileForm   ProfileName + ProfileNameError, ProfileEmail + ProfileEmailError,
-//                 ProfileRole + ProfileRoleError, ProfileStatus + ProfileStatusError,
-//                 ProfilePassword + ProfilePasswordError, ProfileConfirm + ProfileConfirmError
-//   rules: name entered, email correct format and not used by another account,
-//          a role and a status must be selected,
-//          new password may stay empty (keep the old one) but must be 6+ characters if typed, confirm must match
-//
-// localStorage keys (team plan): wf_users, wf_session
-
 let usersKey = "wf_users";
 let sessionKey = "wf_session";
 
@@ -35,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderProfile();
 });
 
-/* ---------- access: the page needs a manager session ---------- */
+//access manager session
 function checkAccess() {
     let session = getSession();
     let app = document.getElementById("app");
@@ -70,7 +54,7 @@ function getManagerName() {
     return "Manager";
 }
 
-/* ---------- profile.html: checks ---------- */
+//checks profile.html
 function checkProfileName() {
     if (document.getElementById("ProfileName").value.trim() === "") {
         return wrong("ProfileNameError", "Please enter your name");
@@ -124,7 +108,7 @@ function checkProfileForm() {
     return passed(results);
 }
 
-/* ---------- profile.html: manager profile ---------- */
+// manager profile
 function getCurrentManager() {
     let session = getSession();
     if (session === null) {
@@ -152,6 +136,7 @@ function renderProfile() {
 
 function saveProfile() {
     let users = readList(usersKey);
+
     // the manager must be found in this same list, so the changes below are the ones that get saved
     let session = getSession();
     let user = session === null ? null : findById(users, session.userId);
@@ -212,7 +197,7 @@ function resetProfileForm() {
     renderProfile();
 }
 
-/* ---------- small helpers ---------- */
+
 function wrong(errorId, text) {
     document.getElementById(errorId).innerHTML = text;
     return false;
@@ -262,7 +247,7 @@ function escapeHtml(value) {
         .replace(/'/g, "&#039;");
 }
 
-// email: correct email format
+// correct email format
 function checkEmail(inputId, errorId, emptyText) {
     let email = document.getElementById(inputId).value.trim();
     let regexpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -275,7 +260,6 @@ function checkEmail(inputId, errorId, emptyText) {
     return right(errorId);
 }
 
-/* ---------- localStorage data (the shared team keys) ---------- */
 function readList(key) {
     let storedData = localStorage.getItem(key);
 
