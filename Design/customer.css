@@ -155,18 +155,7 @@ td {
     padding: 15px;
 }
 
-.topnav select,
-.topnav input {
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    margin: 5px;
-}
 
-.topnav select {
-    background-color: #172B4D;
-    color: white;
-}
 
 .search-btn {
     background-color: #172B4D;
