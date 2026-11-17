@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Booking</title>
+     <link rel="stylesheet" href="../Design/customer.css">
+      <script src="../JS/booking.js"></script>
+    
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h2>Wayfare</h2>
+            <a href="login.html" class="logout">Log Out</a>
+        </div>
+
+        <h1>Car Booking Form</h1>
+
+        <div class="booking-box">
+
+            <form onsubmit="return collect_data();">
+                <fieldset>
+                    <legend>Booking Information</legend>
+
+                    <table>
+
+                        <tr>
+                            <td><label for="carName">Car Name:</label></td>
+                            <td>
+                                <select id="carName" class="car-select">
+                                    <option value="">Select Car</option>
+                                    <option value="Toyota Axio">Toyota Axio</option>
+                                    <option value="Honda Vezel">Honda Vezel</option>
+                                    <option value="Toyota Noah">Toyota Noah</option>
+                                    <option value="Suzuki Swift">Suzuki Swift</option>
+                                    <option value="Toyota Allion">Toyota Allion</option>
+                                    <option value="Mitsubishi Pajero">Mitsubishi Pajero</option>
+                                </select>
+                                <p id="CarError" class="error"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="startDate">Starting Date:</label></td>
+                            <td>
+                                <input type="date" id="startDate">
+                                <p id="StartDateError" class="error"></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="endDate">Ending Date:</label></td>
+                            <td>
+                                <input type="date" id="endDate">
+                                <p id="EndDateError" class="error"></p>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <br>
+
+                    <input type="submit" class="btn4" value="Confirm Booking">
+
+                </fieldset>
+            </form>
+            
+
+        </div>
+
+        <div class="backtopage">
+            <a href="bookaCar.html" class="btn4">Back to Browse Cars</a>
+        </div>
+        <div class="backtopage">
+            <a href="customer.html" class="btn4">Back to Portal</a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <h4>Wayfare Customer Portal</h4>
+    </div>
+
+</body>
+</html>

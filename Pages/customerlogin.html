@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Design/customer.css">
+    <script src="../JS/customerlogin.js"></script>
+    <title>Customer Login</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h2>Wayfare</h2>
+            <a href="login.html" class="logout">Log Out</a>
+        </div>
+
+        <h1>Customer Login Form</h1>
+
+        <form id="loginForm" onsubmit="return collect_data()">
+
+            <fieldset>
+                <legend>Customer Login Information</legend>
+
+                <table>
+                    <tr>
+                        <td><label for="username">Username:</label></td>
+                        <td>
+                            <input type="text" id="username">
+                            <p id="UsernameError" class="error"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td>
+                            <input type="password" id="password">
+                            <p id="PasswordError" class="error"></p>
+                        </td>
+                    </tr>
+                </table>
+
+            </fieldset>
+
+            <br>
+
+            <input type="submit" class="btn4" value="Login">
+            <input type="reset" class="btn4" value="Reset">
+
+            <p>
+                Don't have an account?
+                <a href="customerRegistrationForm.html">Register Here</a>
+            </p>
+            <p>
+                 <a href="customerPortal.html">Go to Customer Portal</a>
+            </p>
+
+        </form>
+
+        <div class="backtopage">
+            <a href="admin.html" class="btn4">Back to Main Page</a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <h4>Wayfare Customer Portal</h4>
+    </div>
+
+</body>
+</html>
