@@ -1,0 +1,300 @@
+/* admin.css - one stylesheet for the four admin pages (adminlogin, admin, branches, adminregister).
+   The sections follow the page from top to bottom; a section a page does not use is simply ignored. */
+
+/* ===== whole page ===== */
+* {   /* width and height include padding and border */
+    box-sizing: border-box;
+}
+
+body {   /* whole page: grey-blue background, dark Arial text */
+    margin: 0;
+    background-color: #f4f6fa;
+    color: #1a2233;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.muted {   /* grey small text */
+    color: #667085;
+    font-size: 13px;
+}
+
+/* ===== top bar ===== */
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #dfe3ea;
+}
+
+.logo {   /* logo picture + word; margin-right auto pushes the menu to the right */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1f6feb;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 28px;
+}
+
+.menu {   /* menu links side by side */
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.menu a {
+    color: #1a2233;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #1f6feb;
+}
+
+/* ===== buttons (every button has ONE class) ===== */
+.btn, .btn-grey, .btn-red {   /* shape of every button */
+    display: inline-block;
+    padding: 7px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    border: 1px solid #dfe3ea;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn {   /* blue: the main action (Add, Save, Login) */
+    background-color: #1f6feb;
+    border-color: #1f6feb;
+    color: white;
+}
+
+.btn-grey {   /* white: other actions (Reset, Edit, Logout) */
+    background-color: white;
+    color: #1a2233;
+}
+
+.btn-red {   /* white with red text: Delete */
+    background-color: white;
+    color: #c62828;
+}
+
+.actions {   /* the buttons under a table */
+    margin-top: 12px;
+}
+
+/* ===== sidebar + content (admin, branches, adminregister) ===== */
+.portal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.side {   /* sidebar with a fixed width */
+    flex: 0 0 190px;
+}
+
+.side a {   /* sidebar links */
+    display: block;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    color: #1a2233;
+    background-color: white;
+    border: 1px solid #dfe3ea;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.side a.active {   /* the page we are on is blue */
+    background-color: #1f6feb;
+    border-color: #1f6feb;
+    color: white;
+}
+
+.content {   /* content takes the remaining width; min-width 0 lets wide tables scroll */
+    flex: 1 1 480px;
+    min-width: 0;
+}
+
+/* ===== login page: centred box and footer (adminlogin) ===== */
+.wrap {   /* centred content, never wider than 1040px */
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.authbox {   /* narrow box in the middle of the page */
+    max-width: 400px;
+    margin: 30px auto;
+}
+
+.footer {   /* thin line and grey text at the bottom */
+    text-align: center;
+    color: #667085;
+    padding: 26px;
+    border-top: 1px solid #dfe3ea;
+    margin-top: 30px;
+}
+
+/* ===== message line ===== */
+.message {   /* result text; min-height keeps the space when empty */
+    text-align: center;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+/* ===== white panels ===== */
+.panel {   /* white box with a thin border */
+    background-color: white;
+    border: 1px solid #dfe3ea;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+}
+
+.panel h3 {
+    margin: 0 0 10px;
+}
+
+/* ===== summary boxes (admin) ===== */
+.stats {   /* equal boxes that fit the width */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+}
+
+.stats div {
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.stats b {   /* the big number */
+    display: block;
+    font-size: 24px;
+}
+
+/* ===== filter row (branches) ===== */
+.toolbar {   /* filter controls side by side */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.toolbar label {
+    margin-bottom: 0;
+}
+
+.toolbar select,
+.toolbar input[type="date"] {
+    width: auto;
+    margin-top: 0;
+}
+
+/* ===== tables ===== */
+.tablebox {   /* wide tables scroll sideways on a small screen */
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #dfe3ea;
+    white-space: nowrap;
+}
+
+th {
+    color: #667085;
+    font-size: 13px;
+}
+
+.pick td {   /* rows of this table can be clicked */
+    cursor: pointer;
+}
+
+.selected {   /* the clicked row */
+    background-color: #eaf1ff;
+}
+
+/* ===== status badges ===== */
+.badge {   /* small rounded status label */
+    padding: 2px 9px;
+    border-radius: 10px;
+    font-size: 12px;
+    border: 1px solid #dfe3ea;
+}
+
+.st-active, .st-Approved, .st-Completed {   /* green */
+    color: #1a7f37;
+}
+
+.st-inactive {   /* red */
+    color: #c62828;
+}
+
+.st-Pending {   /* orange */
+    color: #b76e00;
+}
+
+.st-Started {   /* blue */
+    color: #1f6feb;
+}
+
+/* ===== forms ===== */
+label {   /* small grey label above each box */
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #667085;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {   /* text boxes and dropdowns */
+    display: block;
+    width: 100%;
+    margin-top: 3px;
+    padding: 8px 10px;
+    font-family: inherit;
+    font-size: 15px;
+    border: 1px solid #dfe3ea;
+    border-radius: 6px;
+    background-color: #f4f6fa;
+}
+
+.radiogroup label, .checkrow label {   /* radio buttons and checkbox on one row */
+    display: inline-block;
+    margin: 0 16px 6px 0;
+    font-size: 15px;
+    color: #1a2233;
+}
+
+.error {   /* red text under a wrong field */
+    color: #c62828;
+    font-size: 13px;
+    margin: 0 0 8px;
+    min-height: 4px;
+}

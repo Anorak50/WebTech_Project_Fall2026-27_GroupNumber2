@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Design/admin.css">
+    <script src="../JS/admin.js" defer></script>
+    <title>Admin - Dashboard</title>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="topbar">
+       <a class="logo" href="../index.html"> <img src="" alt="Wayfare logo">Wayfare</a> 
+       <div class="menu">
+                <a href="../index.html">Home</a>
+                <a href="admin.html">My Portal</a>
+                <span class="muted">Ark Admin (admin)</span>
+        </div>
+        <a class="btn-grey" href="login.html"> Logout </a>
+    </div>
+
+    <!-- Side Bar -->
+    <div class="side">
+        <a class="active" href="admin.html"> Dashboard and users </a>
+        <a href="branches.html"> Branches and bookings </a>
+        <!-- <a href="adminregister.html"> Register admin </a> -->
+    </div>
+
+    <!-- dashboard cards-->
+    <div class="panel">
+    <h3>Dashboard</h3>
+        <div class="stats">
+        <div> <b>6</b>Users</div>
+        <div> <b>5</b>Cars</div>
+        <div> <b>3</b>Bookings</div>
+        <div> <b>$120</b>Revenue(completed)</div>
+        </div>
+    </div>
+
+    <!-- ===== users table ===== -->
+    <div class="panel">
+       <h3> Users </h3>
+    <div class="tablebox">
+        <table id="userTable" class="pick">
+        <tr>
+        <th> Name </th>
+        <th> Email </th>
+        <th> Phone </th>
+        <th> Role </th>
+        <th> Status </th>
+        </tr>
+        <tr>
+        <td> Sadia Admin </td>
+        <td> admin@wf.com </td>
+        <td> 01700000001 </td>
+        <td> Admin </td>
+        <td> <span class="badge st-active"> active </span> 
+        </td>
+        </tr>
+        <tr>
+        <td> Mehedi Manager </td>
+        <td> manager@wf.com </td>
+        <td> 01700000002 </td>
+        <td> Manager </td>
+        <td> <span class="badge st-active"> active </span> 
+        </td>
+        </tr>
+        <tr>
+        <td> Rafi Driver </td>
+        <td> driver@wf.com </td>
+        <td> 01700000003 </td>
+        <td> Driver </td>
+        <td> <span class="badge st-active"> active </span> 
+        </td>
+        </tr>
+        <tr>
+        <td> Tania Driver </td>
+        <td> tania@wf.com </td>
+        <td> 01700000004 </td>
+        <td> Driver </td>
+        <td> <span class="badge st-active"> active </span> 
+        </td>
+        </tr>
+        <tr>
+        <td> Nila Customer </td>
+        <td> customer@wf.com </td>
+        <td> 01700000005 </td>
+        <td> Customer </td>
+        <td> <span class="badge st-active"> active </span> 
+        </td>
+        </tr>
+        <tr>
+        <td> Old Customer </td>
+        <td> old@wf.com </td>
+        <td> 01700000007 </td>
+        <td> Customer </td>
+        <td> <span class="badge st-inactive"> inactive </span> 
+        </td>
+        </tr>
+        </table>
+        </div>
+        <div class="actions">
+            <button class="btn-grey" id="EditUserButton"> Edit </button>
+            <button class="btn-grey" id="ToggleUserButton"> Activate / Deactivate </button>
+            <button class="btn-red" id="DeleteUserButton"> Delete </button>
+        </div>
+    </div>
+
+    <!-- add user table -->
+    <form id ="userForm" class="panel"> 
+    <h3>Add User</h3>
+    <label for="UserName">Full name</label>
+    <input type="text" id="UserName" placeholder="Enter The Name">
+    <p id="UserNameError" class="error"></p>
+
+    <label for="UserEmail"> Email</label>
+    <input type="email" id="UserEmail" placeholder="Enter The Email">
+    <p id="UserEmailError" class="error"></p>
+
+    <label for="UserPhone"> Phone</label>
+    <input type="text" id="UserPhone" placeholder="01XXXXXXXXX">
+    <p id="UserPhoneError" class="error"></p>
+
+    <label for="UserRole">Role</label>
+        <select id="UserRole">
+            <option value=""> Select a role </option>
+            <option value="customer"> Customer </option>
+            <option value="driver"> Driver </option>
+            <option value="manager"> Manager </option>
+            <option value="admin"> Admin </option>
+        </select>
+    <p id="UserRoleError" class="error"></p>
+
+    <label> Status </label>
+        <div class="radiogroup">
+            <label><input type="radio" name="status" value="active"> Active</label>
+            <label><input type="radio" name="status" value="inactive"> Inactive</label>
+        </div>
+    <p id="UserStatusError" class="error"></p>
+    
+    <label for="UserPassword"> Password</label>
+    <input type="password" id="UserPassword" placeholder="At least 6 characters, a letter and a number">
+    <p id="UserPasswordError" class="error"></p>
+
+    <input type="submit" class="btn" value="Add user">
+    <input type="reset" class="btn-grey" value="Reset">
+    </form>
+
+    <!-- Edit User -->
+    <form id ="editUserForm" class="panel">
+    <h3> Edit user </h3>
+    <label for="EditUserName"> Full name</label>
+    <input type="text" id="EditUserName" value="Rafi Driver" placeholder="Enter The Name">
+    <p id="EditUserNameError" class="error"></p>
+
+    <label for="EditUserEmail"> Email</label>
+    <input type="email" id="EditUserEmail" value="driver@wf.com" placeholder="Enter The Email">
+    <p id="EditUserEmailError" class="error"></p>
+
+    <label for="EditUserPhone"> Phone</label>
+    <input type="text" id="EditUserPhone" value="01700000003" placeholder="01XXXXXXXXX">
+    <p id="EditUserPhoneError" class="error"></p>
+
+    <label for="EditUserRole"> Role</label>
+        <select id="EditUserRole">
+            <option value=""> Select a role </option>
+            <option value="customer"> Customer </option>
+            <option value="driver" selected> Driver </option>
+            <option value="manager"> Manager </option>
+            <option value="admin"> Admin </option>
+        </select>
+    <p id="EditUserRoleError" class="error"></p>
+
+    <label> Status </label>
+    <div class="radiogroup">
+        <label><input type="radio" name="editStatus" value="active" checked> Active</label>
+        <label><input type="radio" name="editStatus" value="inactive"> Inactive</label>
+    </div>
+    <p id="EditUserStatusError" class="error"></p>
+
+    <label for="EditUserPassword"> New password </label>
+    <input type="password" id="EditUserPassword" placeholder="At least 6 characters, a letter and a number">
+    <p id="EditUserPasswordError" class="error"></p>
+
+    <input type="submit" class="btn" value="Update">
+    <input type="reset" class="btn-grey" value="Cancel">
+    </form> 
+</body>
+</html>
