@@ -262,3 +262,7 @@ select{
     width: auto;
     vertical-align: middle;
 } */
+#adminregister{
+    padding: 30px;
+    text-align: center;
+}
