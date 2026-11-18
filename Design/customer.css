@@ -1,11 +1,11 @@
 
-body {
+body{
     background-color: rgb(239, 230, 168);
     margin: 0;
     text-align: center;
 }
-.container {
-    width: 90%;
+.container{
+    width:90%;
     height: 90%;
     padding: 0;
     margin: 20px auto;
@@ -37,12 +37,12 @@ body {
     box-sizing:border-box;
 }
 
-h2 {
+h2{
     margin: 0;
     color: white;
 }
 
-h1 {
+h1{
     color: rgb(225, 234, 228);
     text-align: center;
     font-weight: bold;
@@ -50,7 +50,7 @@ h1 {
     margin: 0;
    padding: 10px;
 }
-fieldset {
+fieldset{
     border: 2px solid #172B4D;
     border-radius: 10px;
     padding: 20px;
@@ -59,20 +59,20 @@ fieldset {
     background-color: #e2b112;
     color: rgb(16, 4, 4);
 }
-legend {
+legend{
     text-align: left;
     background-color: #0ae8ec;
     border-radius: 5px;
 }
-p {
+p{
     font-size: 18px;
     line-height: 1.6;
     text-align: center;
 }
-table {
+table{
     border-spacing: 20px;
 }
-.table-heading {
+.table-heading{
     color: rgb(246, 12, 12);
     font-weight: bold;
     text-align: center;
@@ -81,13 +81,13 @@ tr{
     text-align: center;
 }
 
-td {
+td{
     vertical-align: top;
     text-align: left;
     
 }
 
-.Welcome-Message {
+.Welcome-Message{
     font-size:20px;
     font-weight: bold;
     text-align: center;
@@ -97,7 +97,7 @@ td {
     color: white;
 }
 
-.logout {
+.logout{
     color: white;
     text-decoration: none;
     background-color: #D9534F;
@@ -105,16 +105,16 @@ td {
     border-radius: 5px;
 }
 
-.logout:hover {
+.logout:hover{
     background-color: red;
 }
 
-.topnav {
+.topnav{
     text-align: center;
     padding: 30px;
 }
 
-.btn1, .btn2 {
+.btn1,.btn2{
     width: 45%;
     box-sizing: border-box;
     display: inline-block;
@@ -128,7 +128,7 @@ td {
     margin: 10px;
 }
 
-.btn3 {
+.btn3{
     width: 93%;
     box-sizing: border-box;
     display: inline-block;
@@ -142,49 +142,31 @@ td {
     margin: 10px;
 }
 
-.btn1:hover, .btn2:hover, .btn3:hover {
-    background-color: blue;
+.btn1:hover,.btn2:hover,.btn3:hover{
+    background-color:blue;
     color: white;
 }
 
 
 
 
-.topnav {
+.topnav{
     text-align: center;
     padding: 15px;
 }
 
-
-
-.search-btn {
-    background-color: #172B4D;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.search-btn:hover {
-    background-color: skyblue;
-    color: black;
-}
-
-.car-table {
+.car-table{
     width: 100%;
     text-align: center;
 }
 
-.car-table td {
+.car-item{
     width: 33%;
     padding: 15px;
     background-color: white;
     text-align: center;
 }
 
-.car-table img {
-    width: 250px;
-    height: 180px;
-}
 
 
 
@@ -192,12 +174,12 @@ h3{
     text-align: center;
 }
 
-.backtopage {
+.backtopage{
     text-align: center;
     margin-top: 20px;
     color: rgb(18, 2, 2);
 }
-.btn4 {
+.btn4{
     display: inline-block;
     background-color: #174d1b;
     color: white;
@@ -205,7 +187,7 @@ h3{
     text-decoration: none;
     border-radius: 5px;
 }
-.btn4:hover {
+.btn4:hover{
     background-color: rgb(232, 50, 9);
     color: white;
 }
@@ -213,7 +195,7 @@ h3{
 
 
 
-.book-btn {
+.book-btn{
     display: inline-block;
     background-color: #172B4D;
     color: white;
@@ -222,7 +204,7 @@ h3{
     border-radius: 5px;
 }
 
-.book-btn:hover {
+.book-btn:hover{
     background-color: skyblue;
     color: black;
 }
@@ -232,35 +214,9 @@ h4{
 }
 
 
-.approved {
-    color: lightgreen;
-}
-
-.pending {
-    color: white;
-}
-
-.cancel-btn {
-    display: inline-block;
-    color: #ff5555;
-    text-decoration: none;
-    padding: 12px 20px;
-    border: 1px solid #39414d;
-    border-radius: 8px;
-}
-
-.edit-btn {
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    padding: 12px 20px;
-    border: 1px solid #39414d;
-    border-radius: 8px;
-}
 
 
-
-.car-select {
+.car-select{
     padding: 12px 20px;
     font-size: 16px;
     border-radius: 5px;
@@ -268,9 +224,8 @@ h4{
     background-color: #172B4D;
     color: white;
 }
-.error {
+.error{
     color: red;
     font-size: 14px;
     margin-top: 5px;
 }
-

@@ -32,3 +32,4 @@ function validatePassword(){
         return true;
     }
 }
+
