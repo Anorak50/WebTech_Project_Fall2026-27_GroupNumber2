@@ -1,0 +1,189 @@
+
+* {
+    box-sizing: border-box;          
+}
+
+body {
+    margin: 0;                       
+    background-color: rgb(214, 222, 238);
+    color: rgb(26, 34, 51);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.muted {
+    color: rgb(102, 112, 133);                 
+    font-size: 13px;
+}
+
+
+.topbar{
+    position:sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;                   
+    gap: 18px;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid rgb(223, 227, 234);
+}
+.menu {
+    display: flex;
+    margin:auto 0;
+    gap: 18px;
+}
+.menu a {
+    color: #1a2233;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: rgb(31, 111, 235);                  
+}
+.logo {
+    display: flex;
+    gap: 8px;                        
+    margin:auto auto auto 0;             
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(31, 111, 235);
+    text-decoration: none;
+}
+
+
+.btn, .btn-grey, .btn-red {
+    display: inline-block;
+    padding: 7px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    border: 1px solid #dfe3ea;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn {
+    background-color: rgb(31, 111, 235);       
+    border-color: rgb(31, 111, 235);
+    color: white;
+}
+
+.btn-grey {
+    background-color: white;         
+    color: #1a2233;
+}
+
+.btn-red {
+    background-color: white;         
+    color: #c62828;
+}
+
+button:disabled {
+    opacity: 0.45;                   
+    cursor: default;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.message {
+    text-align: center;
+    font-weight: bold;
+    min-height: 24px;                
+}
+
+
+.panel {
+    background-color: white;
+    border: 1px solid rgb(40, 40, 0);
+    padding: 14px 16px;
+    margin-bottom: 14px;
+}
+
+.panel h3 {
+    margin: 0 0 10px 0;
+}
+
+
+h4{
+    margin:0;
+}
+
+label {
+    display: block;                 
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #667085;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;                     
+    margin-top: 3px;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 1px solid #dfe3ea;
+    border-radius: 6px; 
+}
+
+textarea {
+    height: 80px;
+    resize: none;                    
+}
+
+.radiogroup label {
+    display: inline-block;           
+    margin: 0 16px 6px 0;
+    font-size: 15px;
+    color: #1a2233;
+}
+
+.error {
+    color: #c62828;                  
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    min-height: 4px;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;          
+}
+
+th {
+    color: #667085;
+    font-size: 13px;
+}
+
+#leaveTable td {
+    cursor: pointer;                 
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.reqApproved {
+    color: #1a7f37;                 
+}
+
+.reqPending {
+    color: #b76e00;               
+}

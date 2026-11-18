@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Design/home.css">
+        <script src="JS/home.js" defer></script>
+        <title> Wayfare - Car Rental </title>
+    </head>
+    <body>
+
+        <div class="topbar">
+            <a class="logo" href="index.html">  Wayfare </a>
+            <div class="menu">
+                <a href="index.html"> Home </a>
+                <a href="#cars"> Cars </a>
+                <a href="#portals"> Login </a>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1> Rent the right car, right now </h1>
+            <p> Clean cars, fair prices and an optional driver. Book in under a minute. </p>
+        </div>
+
+        <div class="container">
+            <form id="searchForm" class="filterbox">
+                <div class="field">
+                    <label for="pickupLocation"> Pickup Location </label>
+                    <select id="pickupLocation">
+                        <option value=""> Select </option>
+                        <option value="Airport Branch"> Airport Branch, Dhaka </option>
+                        <option value="Downtown Branch"> Downtown Branch, Chattogram </option>
+                        <option value="Lake Branch"> Lake Branch, Sylhet </option>
+                    </select>
+                    <p id="PickupLocationError" class="error"></p>
+                </div>
+                <div class="field">
+                    <label for="dropLocation"> Drop Location </label>
+                    <select id="dropLocation">
+                        <option value=""> Select </option>
+                        <option value="Airport Branch"> Airport Branch, Dhaka </option>
+                        <option value="Downtown Branch"> Downtown Branch, Chattogram </option>
+                        <option value="Lake Branch"> Lake Branch, Sylhet </option>
+                    </select>
+                    <p id="DropLocationError" class="error"></p>
+                </div>
+                <div class="field">
+                    <label for="pickupDate"> Pickup Date </label>
+                    <input type="date" id="pickupDate">
+                    <p id="PickupDateError" class="error"></p>
+                </div>
+                <div class="field">
+                    <label for="pickupTime"> Pickup Time </label>
+                    <input type="time" id="pickupTime">
+                    <p id="PickupTimeError" class="error"></p>
+                </div>
+                <div class="field">
+                    <label for="returnDate"> Return Date </label>
+                    <input type="date" id="returnDate">
+                    <p id="ReturnDateError" class="error"></p>
+                </div>
+                <div class="field">
+                    <label for="returnTime"> Return Time </label>
+                    <input type="time" id="returnTime">
+                    <p id="ReturnTimeError" class="error"></p>
+                </div>
+                <div class="searchbtn">
+                    <input type="submit" class="btn" value="Search">
+                </div>
+            </form>
+            <p id="carMsg" class="message"></p>
+
+            <h2 id="cars"> Our cars </h2>
+            <div class="carlist">
+
+                <div class="carrow">
+                    <div class="carpic"> <img src="customerimages/toyotaAxio.jpg"> </div>
+                    <div class="carinfo">
+                        <h3 class="carname"> Toyota Axio </h3>
+                        <p class="carprice">  <b>$60</b> <span >/ day</span> </p>
+                        <ul class="carspecs">
+                            <li class="cartype">🚗 Sedan</li>
+                            <li>💺 5 seats</li>
+                            <li>⚙️ Automatic</li>
+                            <li>⛽ Petrol</li>
+                        </ul>
+                        <p class="carlocation"> 📍 Airport Branch, Dhaka </p>
+                        <a class="btn" href="Pages/customerlogin.html">  Rent Now </a>
+                    </div>
+                </div>
+
+                <div class="carrow">
+                    <div class="carpic"> <img src="customerimages/hondaVesel.jpg"> </div>
+                    <div class="carinfo">
+                        <h3 class="carname"> Honda Vezel </h3>
+                        <p class="carprice">  <b>$85</b> <span >/ day</span> </p>
+                        <ul class="carspecs">
+                            <li class="cartype">🚙 SUV</li>
+                            <li>💺 5 seats</li>
+                            <li>⚙️ Automatic</li>
+                            <li>⛽ Hybrid</li>
+                        </ul>
+                        <p class="carlocation "> 📍 Airport Branch, Dhaka </p>
+                        <a class="btn" href="Pages/customerlogin.html">  Rent Now </a>
+                    </div>
+                </div>
+
+                <div class="carrow">
+                    <div class="carpic"> <img src="customerimages/toyotaNoah.jpg"> </div>
+                    <div class="carinfo">
+                        <h3 class="carname"> Toyota Noah </h3>
+                        <p class="carprice">  <b>$95</b> <span >/ day</span> </p>
+                        <ul class="carspecs">
+                            <li class="cartype">🚐 Van</li>
+                            <li>💺 8 seats</li>
+                            <li>⚙️ Automatic</li>
+                            <li>⛽ Petrol</li>
+                        </ul>
+                        <p class="carlocation"> 📍 Downtown Branch, Chattogram </p>
+                        <a class="btn" href="Pages/customerlogin.html">  Rent Now </a>
+                    </div>
+                </div>
+
+                <div class="carrow">
+                    <div class="carpic"> <img src="customerimages/suzukiSwift.jpg"> </div>
+                    <div class="carinfo">
+                        <h3 class="carname"> Suzuki Swift </h3>
+                        <p class="carprice">  <b>$45</b> <span >/ day</span> </p>
+                        <ul class="carspecs">
+                            <li class="cartype">🚘 Hatchback</li>
+                            <li>💺 4 seats</li>
+                            <li>⚙️ Manual</li>
+                            <li>⛽ Petrol</li>
+                        </ul>
+                        <p class="carlocation"> 📍 Downtown Branch, Chattogram <span > Maintenance </span> </p>
+                        <button class="btn-grey" disabled> Not available </button>
+                    </div>
+                </div>
+
+                <div class="carrow">
+                    <div class="carpic"> <img src="customerimages/toyotaAllion.jpg"> </div>
+                    <div class="carinfo">
+                        <h3 class="carname"> Toyota Allion </h3>
+                        <p class="carprice">  <b>$65</b> <span >/ day</span> </p>
+                        <ul class="carspecs">
+                            <li class="cartype">🚗 Sedan</li>
+                            <li>💺 5 seats</li>
+                            <li>⚙️ Automatic</li>
+                            <li>⛽ Petrol</li>
+                        </ul>
+                        <p class="carlocation"> 📍 Airport Branch, Dhaka </p>
+                        <a class="btn" href="Pages/customerlogin.html">  Rent Now </a>
+                    </div>
+                </div>
+
+                <div class="carrow">
+                    <div class="carpic"> <img src="customerimages/mitsubishiPajero.jpg"> </div>
+                    <div class="carinfo">
+                        <h3 class="carname"> Mitsubishi Pajero </h3>
+                        <p class="carprice"> <b>$120</b> <span >/ day</span> </p>
+                        <ul class="carspecs">
+                            <li class="cartype">🚙 SUV</li>
+                            <li>💺 7 seats</li>
+                            <li>⚙️ Automatic</li>
+                            <li>⛽ Diesel</li>
+                        </ul>
+                        <p class="carlocation "> 📍 Lake Branch, Sylhet </p>
+                        <a class="btn" href="Pages/customerlogin.html">  Rent Now </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <h2 id="portals"> Login </h2>
+            <p class="center "> Choose your user type to open its login page. </p>
+            <div class="grid">
+
+                <div class="card">
+                    <div class="cardbody">
+                        <h3> Admin </h3>
+                        <div > Manages users, branches and all bookings. </div>
+                        <div class="cardlink"> <a class="btn" href="Pages/adminlogin.html"> Admin Login </a> </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="cardbody">
+                        <h3> Manager </h3>
+                        <div> Manages the fleet, approves bookings and assigns drivers. </div>
+                        <div class="cardlink"> <a class="btn" href="Pages/managerlogin.html"> Manager Login </a> </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="cardbody">
+                        <h3> Driver </h3>
+                        <div > Sees assigned trips and manages leave and profile. </div>
+                        <div class="cardlink"> <a class="btn" href="Pages/driverlogin.html"> Driver Login </a> </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="cardbody">
+                        <h3> Customer </h3>
+                        <div > Browses cars, books them and manages bookings. </div>
+                        <div class="cardlink"> <a class="btn" href="Pages/customerlogin.html"> Customer Login </a> </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">   Wayfare Car Rental Services </div>
+
+    </body>
+</html>

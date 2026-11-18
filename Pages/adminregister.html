@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/admin.css">
+        <script src="../JS/admin.js" defer></script>
+        <title> Admin - Register Admin </title>
+    </head>
+    <body>
+
+       <!-- Topbar -->
+    <div class="topbar">
+       <a class="logo"> <img src="../Image/car.jpg" alt="Wayfare logo">Wayfare</a> 
+       <div class="menu">
+                <a href="../index.html">Home</a>
+                <a href="admin.html">My Portal</a>
+                <span class="muted">Ark Admin (admin)</span>
+        </div>
+        <a href="adminlogin.html" id="logoutBtn"> Logout </a>
+    </div>
+            <!-- Content -->
+            <div class="content2">
+                <p id="msg" class="message"></p>
+
+                <!-- registration form -->
+                <form id="AdminRegisterForm" class="panel" onsubmit="return validateForm">
+                    <h3> Register a new admin </h3>
+                    <label for="AdmName"> Full name</label>
+                        <input type="text" id="AdmName" placeholder="Enter The Name">
+                    <p id="AdmNameError" class="error"></p>
+                    <label for="AdmEmail"> Email</label>
+                        <input type="email" id="AdmEmail" placeholder="Enter The Email">
+                    <p id="AdmEmailError" class="error"></p>
+                    <label for="AdmPhone"> Phone</label>    
+                        <input type="text" id="AdmPhone" placeholder="01XXXXXXXXX">
+                    <p id="AdmPhoneError" class="error"></p>
+                    <label for="AdmAge"> Age</label>
+                        <input type="number" id="AdmAge" placeholder="Enter The Age">
+                    <p id="AdmAgeError" class="error"></p>
+                    <label> Gender </label>
+                    <div class="radiogroup">
+                        <label><input type="radio" name="admGender" value="Male"> Male</label>
+                        <label><input type="radio" name="admGender" value="Female"> Female</label>
+                        <label><input type="radio" name="admGender" value="Other"> Other</label>
+                    </div>
+                    <p id="AdmGenderError" class="error"></p>
+                    <label for="AdmDepartment"> Department</label>
+                        <select id="AdmDepartment">
+                            <option value=""> Select a department </option>
+                            <option value="Operations"> Operations </option>
+                            <option value="Finance"> Finance </option>
+                            <option value="Support"> Support </option>
+                        </select>
+                    </label>
+                    <p id="AdmDepartmentError" class="error"></p>
+                    <label for="AdmPassword"> Password</label>
+                        <input type="password" id="AdmPassword" placeholder="At least 6 characters, a letter and a number">
+                    <p id="AdmPasswordError" class="error"></p>
+                    <label for="AdmConfirm"> Confirm password</label>   
+                        <input type="password" id="AdmConfirm" placeholder="Type the password again">
+                    <p id="AdmConfirmError" class="error"></p>
+                    <div class="checkrow">
+                        <label><input type="checkbox" id="AdmTerms"> I confirm this person may manage users, branches and bookings</label>
+                    </div>
+                    <p id="AdmTermsError" class="error"></p>
+                    <input type="submit" class="btn" value="Register admin">
+                    <input type="reset" class="btn-grey" value="Reset">
+                </form>
+            </div>
+    </body>
+</html>

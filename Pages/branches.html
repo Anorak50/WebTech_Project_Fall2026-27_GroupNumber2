@@ -5,168 +5,184 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Design/admin.css">
     <script src="../JS/admin.js" defer></script>
-    <title> Admin (Branches and Bookings) </title>
+    <title>Admin - Dashboard</title>
 </head>
 <body>
-    <!-- Top Bar -->
+    <!-- Topbar -->
     <div class="topbar">
-       <!-- <a class="logo" href="../index.html"> <img src="" alt="Wayfare logo">Wayfare</a>  -->
+      <a class="logo"> <img src="../Image/car.jpg" alt="Wayfare logo">Wayfare</a> 
        <div class="menu">
                 <a href="../index.html">Home</a>
                 <a href="admin.html">My Portal</a>
                 <span class="muted">Ark Admin (admin)</span>
         </div>
-        <a class="btn-grey" href="login.html"> Logout </a>
+        <a href="adminlogin.html" id="logoutBtn"> Logout </a>
     </div>
 
-    <!-- Side Bar -->
+    <!-- SIDEBAR -->
     <div class="side">
-        <a class="active" href="admin.html"> Dashboard and users </a>
-        <a href="branches.html"> Branches and bookings </a>
+        <a href="admin.html"> Dashboard and users </a>
+        <a class="active" href="branches.html"> Branches and bookings </a>
         <!-- <a href="adminregister.html"> Register admin </a> -->
     </div>
 
+    <!-- Content  -->
     <div class="content">
+        <div id="msg" class="message"></div>
+
+    <!-- Branches -->
     <div class="panel">
-    <h3> Branches </h3>
-    <div class="tablebox">
-        <table id="branchTable" class="pick">
-        <tr>
-        <th>Branch</th>
-        <th>City</th>
-        <th>Cars</th>
-        </tr>
-        <tr>
-        <td>Airport Branch </td>
-        <td>Dhaka</td>
-        <td>3</td>
-        </tr>
-        <tr>
-        <td>Downtown Branch</td>
-        <td>Chattogram</td>
-        <td>2</td>
-        </tr>
-        <tr>
-        <td>Lake Branch</td>
-        <td>Sylhet</td>
-        <td>1</td>
-        </tr>
-        </table>
+        <h2>Branches</h2>
+        <div class="tablebox">
+            <table id="branchTable" class="pick">
+                    <tr>
+                        <th>Branch Name</th>
+                        <th>City</th>
+                        <th>Cars</th>
+                    </tr>
+                    <tr>
+                        <td>Airport Branch</td>
+                        <td>Dhaka</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Downtown Branch</td>
+                        <td>Chattogram</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Lake Branch</td>
+                        <td>Sylhet</td>
+                        <td>1</td>
+                    </tr>
+            </table>
         </div>
-            <div class="actions">
-            <button class="btn-grey" id="EditBranchButton">Edit</button>
-        <button class="btn-red" id="DeleteBranchButton">Delete</button>
+
+        <div class="actions">
+            <button type="button" class="btn" id="EditBranchButton">Edit Selected</button>
+            <button type="button" class="btn btn-red" id="DeleteBranchButton">Delete Selected</button>
         </div>
     </div>
 
-    <!-- add branch  -->
-    <form id="branchForm" class="panel">
-    <h3>Add branch</h3>
+    <!-- Add Branch -->
+    <form id="branchForm" class="panel" novalidate>
+        <h2>Add Branch</h2>
 
-    <label for="BranchName">Branch name</label>
-    <input type="text" id="BranchName" placeholder="Enter The Branch Name">
-    <p id="BranchNameError" class="error"></p>
+        <label for="BranchName">Branch Name</label>
+        <input type="text" id="BranchName" name="BranchName">
+        <small id="BranchNameError" class="error"></small>
 
-    <label for="BranchCity">City</label>
-    <input type="text" id="BranchCity" placeholder="Enter The City">
-    <p id="BranchCityError" class="error"></p>
+        <label for="BranchCity">City</label>
+        <input type="text" id="BranchCity" name="BranchCity">
+        <small id="BranchCityError" class="error"></small>
 
-    <input type="submit" class="btn" value="Add branch">
-    <input type="reset" class="btn-grey" value="Reset">
+        <button type="submit" class="btn">Add Branch</button>
     </form>
 
-    <!-- edit branch -->
-    <form id="editBranchForm" class="panel">
-    <h3> Edit branch </h3>
+    <!-- Edit Branch -->
+    <form id="editBranchForm" class="panel" novalidate>
+        <h2>Edit Branch</h2>
 
-    <label for="EditBranchName">Branch name</label>
-    <input type="text" id="EditBranchName" value="Airport Branch" placeholder="Enter The Branch Name">
-    <p id="EditBranchNameError" class="error"></p>
+        <label for="EditBranchName">Branch Name</label>
+        <input type="text" id="EditBranchName" name="EditBranchName">
+        <small id="EditBranchNameError" class="error"></small>
 
-    <label for="EditBranchCity">City</label>
-    <input type="text" id="EditBranchCity" value="Dhaka" placeholder="Enter The City">
-    <p id="EditBranchCityError" class="error"></p>
+        <label for="EditBranchCity">City</label>
+        <input type="text" id="EditBranchCity" name="EditBranchCity">
+        <small id="EditBranchCityError" class="error"></small>
 
-    <input type="submit" class="btn" value="Update branch">
-    <input type="reset" class="btn-grey" value="Cancel">
+        <button type="submit" class="btn">Update Branch</button>
     </form>
 
-    <!-- all bookings-->
+    <!-- Booking Filter -->
+    <form id="bookingFilterForm" class="panel">
+        <h2>Filter Bookings</h2>
+
+        <label for="BookingStatus">Booking Status</label>
+        <select id="BookingStatus" name="BookingStatus">
+            <option value="">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Started">Started</option>
+            <option value="Completed">Completed</option>
+        </select>
+
+        <label for="BookingFrom">From Date</label>
+        <input type="date" id="BookingFrom" name="BookingFrom">
+
+        <label for="BookingTo">To Date</label>
+        <input type="date" id="BookingTo" name="BookingTo">
+
+        <small id="BookingDateError" class="error"></small>
+
+        <button type="submit" class="btn">Apply Filter</button>
+    </form>
+
+    <!-- Bookings -->
     <div class="panel">
-    <h3> All bookings </h3>
-    <form id="bookingFilterForm" class="toolbar">
-    <label for="BookingStatus"> Status </label>
-    <select id="BookingStatus">
-        <option value=""> All statuses </option>
-        <option>Pending</option>
-        <option>Approved</option>
-        <option>Started</option>
-        <option>Completed</option>
-        <option>Rejected</option>
-        <option>Cancelled</option>
-    </select>
-    <label for="BookingFrom">From</label>
-    <input type="date" id="BookingFrom">
-    <label for="BookingTo">To</label>
-    <input type="date" id="BookingTo">
-    <input type="submit" class="btn-grey" value="Apply filter">
-    <input type="reset" class="btn-grey" value="Clear">
-    </form>
-    <p id="BookingDateError" class="error"></p>
+        <h2>Bookings</h2>
 
-    <div class="tablebox">
-    <table id="bookingTable">
-    <tr>
-    <th> Customer </th>
-    <th> Car </th>
-    <th> Driver </th>
-    <th> Dates </th>
-    <th> Total </th>
-    <th> Status </th>
-    </tr>
-    <tr>
-    <td> Nila Customer </td>
-    <td> Honda Vezel </td>
-    <td> Rafi Driver </td>
-    <td> 2026-11-02 to 2026-11-04 </td>
-    <td> $170 </td>
-    <td> <span class="badge st-Approved"> Approved </span> </td>
-    </tr>
-    <tr>
-    <td> Karim Hasan </td>
-    <td> Toyota Noah </td>
-    <td> Rafi Driver </td>
-    <td> 2026-11-06 to 2026-11-07 </td>
-    <td> $95 </td>
-    <td> <span class="badge st-Approved"> Approved </span> </td>
-    </tr>
-    <tr>
-    <td> Nila Customer </td>
-    <td> Toyota Axio </td>
-    <td> Rafi Driver </td>
-    <td> 2026-10-20 to 2026-10-22 </td>
-    <td> $120 </td>
-    <td> <span class="badge st-Completed"> Completed </span> </td>
-    </tr>
-    <tr>
-    <td> Karim Hasan </td>
-    <td> Toyota Allion </td>
-    <td> Rafi Driver </td>
-    <td> 2026-10-29 to 2026-10-30 </td>
-    <td> $65 </td>
-    <td> <span class="badge st-Started"> Started </span> </td>
-    </tr>
-    <tr>
-    <td> Nila Customer </td>
-    <td> Toyota Axio </td>
-    <td> - </td>
-    <td> 2026-11-10 to 2026-11-12 </td>
-    <td> $120 </td>
-    <td> <span class="badge st-Pending"> Pending </span> </td>
-    </tr>
-    </table>
+        <div class="tablebox">
+            <table id="bookingTable" class="pick">
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>Customer</th>
+                        <th>Car</th>
+                        <th>Branch</th>
+                        <th>Booking Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>B001</td>
+                        <td>Nila Customer</td>
+                        <td>Toyota Corolla</td>
+                        <td>Airport Branch</td>
+                        <td>2026-01-10</td>
+                        <td>$120</td>
+                        <td><span class="badge st-Completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td>B002</td>
+                        <td>Customer 2</td>
+                        <td>Honda Civic</td>
+                        <td>Downtown Branch</td>
+                        <td>2026-01-12</td>
+                        <td>$150</td>
+                        <td><span class="badge st-Pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>B003</td>
+                        <td>Customer 3</td>
+                        <td>Toyota Axio</td>
+                        <td>Lake Branch</td>
+                        <td>2026-01-14</td>
+                        <td>$100</td>
+                        <td><span class="badge st-Approved">Approved</span></td>
+                    </tr>
+                    <tr>
+                        <td>B004</td>
+                        <td>Customer 4</td>
+                        <td>Nissan X-Trail</td>
+                        <td>Airport Branch</td>
+                        <td>2026-01-16</td>
+                        <td>$180</td>
+                        <td><span class="badge st-Started">Started</span></td>
+                    </tr>
+                    <tr>
+                        <td>B005</td>
+                        <td>Customer 5</td>
+                        <td>Honda City</td>
+                        <td>Downtown Branch</td>
+                        <td>2026-01-18</td>
+                        <td>$90</td>
+                        <td><span class="badge st-Pending">Pending</span></td>
+                    </tr>
+            </table>
+        </div>
     </div>
-    </div>
-    </div>
-    </body>
+
+</div>
+
+</body>
 </html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/profile.css">
+        <script src="../JS/profile.js" defer></script>
+        <title> Manager - My Profile </title>
+    </head>
+    <body>
+
+       
+        <div class="topbar">
+            <a class="logo" href="../index.html"> Wayfare </a>
+            <div class="menu">
+                <a href="../index.html"> Home </a>
+                <a href="manager.html"> My Portal </a>
+                <span class="muted" id="userName"> Manager (manager) </span>
+            </div>
+            <a class="btn-grey" href="managerlogin.html"> Logout </a>
+        </div>
+
+      
+        <div id="msg" class="message"></div>
+
+        <div class="portal">
+
+          
+            <div class="side">
+                <h3> Manager Menu </h3>
+                <a href="manager.html"> Fleet Management </a>
+                <a href="approvals.html"> Booking Approvals </a>
+                <a href="maintenance.html"> Maintenance Log </a>
+                <a class="active" href="profile.html"> My Profile </a>
+            </div>
+
+         
+            <div class="content" id="app">
+
+                <div class="pagehead">
+                    <p class="eyebrow"> MANAGER / ACCOUNT </p>
+                    <h1> My Profile </h1>
+                    <p> View and update your personal account information. </p>
+                </div>
+
+                
+                <div class="panel">
+                    <h2> Profile Information </h2>
+                    <p class="muted"> Update your name, email address, role, status or password. </p>
+
+                    <form id="profileForm">
+                        <fieldset>
+                            <legend> Personal Information </legend>
+                            <table class="formtable">
+                                <tr>
+                                    <td><label for="ProfileName"> Full Name: </label></td>
+                                    <td>
+                                        <input type="text" id="ProfileName" placeholder="Enter your name">
+                                        <p id="ProfileNameError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="ProfileEmail"> Email: </label></td>
+                                    <td>
+                                        <input type="email" id="ProfileEmail" placeholder="Enter your email">
+                                        <p id="ProfileEmailError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="ProfileRole"> Account Role: </label></td>
+                                    <td>
+                                        <select id="ProfileRole">
+                                            <option value=""> Select Role </option>
+                                            <option value="admin"> Admin </option>
+                                            <option value="manager"> Manager </option>
+                                            <option value="driver"> Driver </option>
+                                            <option value="customer"> Customer </option>
+                                        </select>
+                                        <p id="ProfileRoleError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="ProfileStatus"> Account Status: </label></td>
+                                    <td>
+                                        <select id="ProfileStatus">
+                                            <option value=""> Select Status </option>
+                                            <option value="active"> Active </option>
+                                            <option value="inactive"> Inactive </option>
+                                        </select>
+                                        <p id="ProfileStatusError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="ProfilePassword"> New Password: </label></td>
+                                    <td>
+                                        <input type="password" id="ProfilePassword" placeholder="Leave blank to keep current password">
+                                        <p class="muted"> Enter a new password only if you want to change it. </p>
+                                        <p id="ProfilePasswordError" class="error"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="ProfileConfirm"> Confirm New Password: </label></td>
+                                    <td>
+                                        <input type="password" id="ProfileConfirm" placeholder="Re-enter new password">
+                                        <p id="ProfileConfirmError" class="error"></p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class="actions">
+                                <input type="submit" class="btn" value="Save Changes">
+                                <input type="reset" class="btn-grey" value="Reset">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Design/admin.css">
+    <script src="../JS/admin.js" defer></script>
+    <title>Login</title>
+</head>
+    <body>
+        <!-- Topbar -->
+    <div class="topbar">
+       <a class="logo"> <img src="../Image/car.jpg" alt="Wayfare logo">Wayfare</a> 
+       <div class="menu">
+                <a href="../index.html">Home</a>
+                <a href="admin.html">My Portal</a>
+                <span class="muted">Ark Admin (admin)</span>
+        </div>
+        <a href="adminlogin.html" id="logoutBtn"> Logout </a>
+    </div>
+                <!-- login form -->
+                <form id="adminLoginForm" class="panel">
+                    <h3> Admin Login </h3>
+                    <label for="AdmLoginEmail"> Email
+                        <input type="email" id="AdmLoginEmail" placeholder="Enter Your Email">
+                    </label>
+                    <p id="AdmLoginEmailError" class="error"></p>
+                    <label for="AdmLoginPassword"> Password</label>
+                    <input type="password" id="AdmLoginPassword" placeholder="Enter Your Password">
+                    <p id="AdmLoginPasswordError" class="error"></p>
+                    <input type="submit" class="btn" value="Login">
+                    <input type="reset" class="btn-grey" value="Reset">
+                    <p id="AdmLoginMsg" class="message"></p>
+                    <p class="muted"> <a href="admin.html"> open the Admin portal </a> </p>
+                    <p><a href="adminregister.html" id="adminregisterbtn"> Register </a> </p>
+                </form>
+        <div class="footer"> Wayfare Car Rental Service </div>
+    </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Design/managerregister.css">
+        <script src="../JS/managerregister.js" defer></script>
+        <title> Manager - Register </title>
+    </head>
+    <body>
+
+       
+        <div class="topbar">
+            <a class="logo" href="../index.html"> Wayfare </a>
+            <div class="menu">
+                <a href="../index.html"> Home </a>
+                <a href="managerlogin.html"> Login </a>
+            </div>
+        </div>
+
+       
+        <div class="splitcard">
+
+            <div class="brand">
+                <h1> Become a Manager </h1>
+                <p> One manager runs one branch. Register with your branch and your experience. </p>
+                <ul class="brandlist">
+                    <li> Run one branch - Airport, Downtown or Lake </li>
+                    <li> Approve bookings and assign drivers </li>
+                    <li> Keep the fleet maintained and road-ready </li>
+                </ul>
+            </div>
+
+            <div class="formside">
+
+               
+                <form id="managerRegisterForm">
+                    <h2> Manager Registration </h2>
+                    <p class="muted center"> Fill in your details to create a manager account. </p>
+
+                    <label for="MgrName"> Full name
+                        <input type="text" id="MgrName" placeholder="Enter Your Name">
+                    </label>
+                    <p id="MgrNameError" class="error"></p>
+
+                    <label for="MgrEmail"> Email
+                        <input type="email" id="MgrEmail" placeholder="Enter Your Email">
+                    </label>
+                    <p id="MgrEmailError" class="error"></p>
+
+                    <label for="MgrPhone"> Phone
+                        <input type="text" id="MgrPhone" placeholder="01XXXXXXXXX">
+                    </label>
+                    <p id="MgrPhoneError" class="error"></p>
+
+                    <div class="formrow">
+                        <div class="field">
+                            <label for="MgrAge"> Age
+                                <input type="number" id="MgrAge" placeholder="Enter Your Age">
+                            </label>
+                            <p id="MgrAgeError" class="error"></p>
+                        </div>
+                        <div class="field">
+                            <label for="MgrExperience"> Years of experience
+                                <input type="number" id="MgrExperience" placeholder="Enter Years of Experience">
+                            </label>
+                            <p id="MgrExperienceError" class="error"></p>
+                        </div>
+                    </div>
+
+                    <label> Gender </label>
+                    <div class="radiogroup">
+                        <label><input type="radio" name="mgrGender" value="Male"> Male</label>
+                        <label><input type="radio" name="mgrGender" value="Female"> Female</label>
+                        <label><input type="radio" name="mgrGender" value="Other"> Other</label>
+                    </div>
+                    <p id="MgrGenderError" class="error"></p>
+
+                    <label for="MgrBranch"> Branch to manage
+                        <select id="MgrBranch">
+                            <option value=""> Select a branch </option>
+                            <option value="Airport Branch"> Airport Branch, Dhaka </option>
+                            <option value="Downtown Branch"> Downtown Branch, Chattogram </option>
+                            <option value="Lake Branch"> Lake Branch, Sylhet </option>
+                        </select>
+                    </label>
+                    <p id="MgrBranchError" class="error"></p>
+
+                    <div class="formrow">
+                        <div class="field">
+                            <label for="MgrPassword"> Password
+                                <input type="password" id="MgrPassword" placeholder="At least 6 characters, a letter and a number">
+                            </label>
+                            <p id="MgrPasswordError" class="error"></p>
+                        </div>
+                        <div class="field">
+                            <label for="MgrConfirm"> Confirm password
+                                <input type="password" id="MgrConfirm" placeholder="Type the password again">
+                            </label>
+                            <p id="MgrConfirmError" class="error"></p>
+                        </div>
+                    </div>
+
+                    <div class="checkrow">
+                        <label><input type="checkbox" id="MgrTerms"> I agree to the manager code of conduct and company policy</label>
+                    </div>
+                    <p id="MgrTermsError" class="error"></p>
+
+                    <input type="submit" class="btn" value="Register">
+                    <input type="reset" class="btn-grey" value="Reset">
+                    <p id="MgrRegMsg" class="message"></p>
+
+                    <p class="muted center"> Already have an account? <a href="managerlogin.html"> Login </a> </p>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="footer"> &copy; 2026 Wayfare Car Rental - Created by Team Wayfare </div>
+
+    </body>
+</html>
